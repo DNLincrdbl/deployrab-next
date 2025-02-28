@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --plyr-color-main: #0066FF;
+  --plyr-video-background: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
+}
+
+main {
+  background-color: white;
+}
+
+/* Ha esetleg a html elem is fekete lenne */
+html {
+  background-color: white;
+}
+
+/* Plyr alapstílusok */
+.plyr {
+  width: 100%;
+  height: 100%;
+}
+
+.plyr video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Konténer stílusok */
+.plyr__video-wrapper {
+  height: 100%;
+  width: 100%;
+}

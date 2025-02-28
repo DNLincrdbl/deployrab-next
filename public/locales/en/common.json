@@ -1,0 +1,278 @@
+{
+    "home": "Home",
+    "about": "About",
+    "about_section": {
+        "title": {
+            "first": "Discover the perfect",
+            "second": "home of relaxation"
+        },
+        "description": "For over a decade, our accommodation has been providing unforgettable experiences to our guests. Modern comfort meets traditional hospitality here to make your relaxation perfect.",
+        "stats": {
+            "experience": "Years of experience",
+            "guests": "Satisfied guests",
+            "rating": "Average rating",
+            "returning": "Returning guests"
+        },
+        "cta": "Discover our services"
+    },
+    "rooms": "Rooms",
+    "contact": "Contact",
+    "booking": "Booking",
+
+    "book_now": "Book now",
+
+    "hero": {
+        "title": {
+          "part1": "Discover the",
+          "part2": "nature's",
+          "part3": "tranquility"
+        },
+        "description": "Rest and recharge in a stunning environment where comfort meets serenity.",
+        "book_now": "Book Now",
+        "excellence_badge": "Excellent Choice"
+      },
+    "rooms_section": {
+        "title": "Our Rooms",
+        "description": "Discover our uniquely designed rooms, each offering the perfect harmony of comfort and style",
+        "details": "Details",
+        "amenities": {
+            "king_size": "King size bed",
+            "queen_size": "Queen size bed",
+            "twin_beds": "Twin beds",
+            "ac": "Air conditioning",
+            "wifi": "Wifi",
+            "tv": "Smart TV",
+            "minibar": "Mini bar",
+            "safe": "Safe",
+            "kitchen": "Fully equipped kitchen",
+            "balcony": "Balcony",
+            "sea_view": "Sea view",
+            "washing_machine": "Washing machine",
+            "jacuzzi": "Jacuzzi",
+            "workspace": "Workspace",
+            "coffee_maker": "Coffee maker",
+            "mini_kitchen": "Mini kitchen",
+            "terrace": "Terrace",
+            "garden": "Garden access"
+        },
+        "room_types": {
+            "room1": {
+                "title": "Room 1",
+                "description": "Elegant, modern room for two people"
+            },
+            "room2": {
+                "title": "Room 2",
+                "description": "Spacious two-bedroom apartment for families"
+            },
+            "room3": {
+                "title": "Room 3",
+                "description": "Modern studio apartment with breathtaking views of the Adriatic Sea"
+            },
+            "room4": {
+                "title": "Room 4",
+                "description": "Three-bedroom, two-bathroom suite for larger families"
+            },
+            "room5": {
+                "title": "Room 5",
+                "description": "Ground floor apartment with private garden access"
+            },
+            "room6": {
+                "title": "Room 6",
+                "description": "Exclusive penthouse apartment with panoramic views and jacuzzi"
+            },
+            "room7": {
+                "title": "Room 7",
+                "description": "Practical layout room at an affordable price"
+            },
+            "room8": {
+                "title": "Room 8",
+                "description": "Romantic suite with private balcony"
+            },
+            "room9": {
+                "title": "Room 9",
+                "description": "Modern room with extra comfort amenities"
+            },
+            "room10": {
+                "title": "Room 10",
+                "description": "Elegant duplex apartment with gallery"
+            },
+            "outdoor": {
+                "title": "Outdoor Area",
+                "description": "Beautiful outdoor spaces and surroundings of Villa Laki Rab"
+            }
+        },
+        "rooms": {
+            "room1": {
+                "title": "Room name",
+                "description": "Room description"
+            }
+        },
+        "size": "{{size}} m²",
+        "capacity": "{{capacity}} persons",
+        "capacity_unit": "person",
+        "room_modal": {
+            "price_per_night": "Price per night",
+            "book_now": "Book Now"
+        },
+        "price": "€{{price}}"
+    },
+    "amenities_section": {
+        "title": "Villa Laki Rab Amenities",
+        "subtitle": "Most Popular Services",
+        "categories": {
+            "stay": {
+                "title": "Perfect for Your Stay",
+                "items": [
+                    "Private bathroom",
+                    "Free parking",
+                    "Free WiFi",
+                    "Pets allowed",
+                    "Beach",
+                    "Air conditioning",
+                    "Family rooms",
+                    "Flat-screen TV",
+                    "Picnic area"
+                ]
+            },
+            "outdoor": {
+                "title": "Outdoor Facilities",
+                "items": [
+                    "Fire pit",
+                    "Picnic area",
+                    "Garden furniture",
+                    "Sun terrace",
+                    "Private beach area",
+                    "Terrace",
+                    "Garden"
+                ]
+            },
+            "kitchen": {
+                "title": "Kitchen",
+                "items": [
+                    "Shared kitchen",
+                    "Dining table",
+                    "Kitchen equipment",
+                    "Kettle",
+                    "Refrigerator"
+                ]
+            },
+            "bathroom": {
+                "title": "Bathroom",
+                "items": [
+                    "Toilet paper",
+                    "Towels",
+                    "Private bathroom",
+                    "Toilet",
+                    "Hair dryer",
+                    "Shower"
+                ]
+            },
+            "bedroom": {
+                "title": "Bedroom",
+                "items": [
+                    "Bed linen",
+                    "Wardrobe"
+                ]
+            },
+            "view": {
+                "title": "View",
+                "items": [
+                    "Garden view",
+                    "Sea view",
+                    "View"
+                ]
+            },
+            "languages": {
+                "title": "Languages Spoken",
+                "items": [
+                    "German",
+                    "English",
+                    "Croatian",
+                    "Hungarian",
+                    "Italian"
+                ]
+            }
+        },
+        "top_amenities": {
+            "free_parking": "free parking",
+            "free_wifi": "free WiFi",
+            "family_rooms": "family rooms",
+            "non_smoking": "non-smoking rooms",
+            "bar": "bar",
+            "private_beach": "private beach"
+        },
+        "internet_description": "Free WiFi is available throughout the property.",
+        "parking_title": "Parking",
+        "parking_description": "Free private parking is possible on site (no reservation needed)."
+    },
+    "faq_section": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know",
+        "questions": [
+            {
+                "question": "What are the check-in and check-out times?",
+                "answer": "Check-in is available from 14:00, and check-out is until 10:00. If you need to arrive or depart at different times, please let us know in advance."
+            },
+            {
+                "question": "Is there free parking available?",
+                "answer": "Yes, we provide free private parking for our guests on the property. No reservation is needed."
+            },
+            {
+                "question": "Do you accept credit cards?",
+                "answer": "Yes, we accept Visa and Mastercard. Cash payments and bank transfers are also possible."
+            },
+            {
+                "question": "Are pets allowed?",
+                "answer": "Yes, pets are welcome with prior arrangement. Please inform us if you're planning to bring a pet."
+            },
+            {
+                "question": "Is there air conditioning?",
+                "answer": "Yes, all our rooms are equipped with individually controlled air conditioning units."
+            },
+            {
+                "question": "How far is the beach?",
+                "answer": "Our private beach area is directly in front of the property, approximately 50 meters from the apartments."
+            }
+        ]
+    },
+    "contact_section": {
+        "title": "Contact",
+        "subtitle": "Get in touch with us",
+        "form": {
+            "title": "Send us a message",
+            "name": "Name",
+            "name_placeholder": "Your name",
+            "email": "Email",
+            "email_placeholder": "Your email address",
+            "message": "Message",
+            "message_placeholder": "Write your message...",
+            "submit": "Send Message"
+        },
+        "info": {
+            "address": {
+                "title": "Address",
+                "value": "Barbat 744, Rab 51280, Croatia"
+            },
+            "phone": {
+                "title": "Phone",
+                "value": "+385 99 3333 333"
+            },
+            "email": {
+                "title": "Email",
+                "value": "info@villalakirab.com"
+            },
+            "hours": {
+                "title": "Opening Hours",
+                "value": "Check-in: 14:00 - 23:00\nCheck-out: 6:00 - 10:00"
+            }
+        }
+    },
+    "weather": {
+        "title": "Today's Weather in Rab",
+        "feels_like": "Feels like",
+        "humidity": "Humidity",
+        "loading": "Loading weather...",
+        "error": "Weather data unavailable"
+    }
+}
+

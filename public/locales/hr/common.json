@@ -1,0 +1,288 @@
+{
+    "home": "Početna",
+    "about": "O nama",
+    "about_section": {
+        "title": {
+            "first": "Otkrijte savršeni",
+            "second": "dom za opuštanje"
+        },
+        "description": "Već više od desetljeća naš smještaj pruža nezaboravna iskustva našim gostima. Ovdje se moderni komfor susreće s tradicionalnim gostoprimstvom kako bi vaš odmor bio savršen.",
+        "stats": {
+            "experience": "Godina iskustva",
+            "guests": "Zadovoljnih gostiju",
+            "rating": "Prosječna ocjena",
+            "returning": "Gostiju koji se vraćaju"
+        },
+        "cta": "Otkrijte naše usluge"
+    },
+    "rooms": "Sobe",
+    "contact": "Kontakt",
+    "booking": "Rezerviraj",
+    "welcome": "Dobrodošli u Rab-Villu",
+    "aboutUs": "O nama",
+    "aboutDescription": "Rab-Villa je obiteljski smještaj na otoku Rabu...",
+    "facilities": "Sadržaji",
+    "location": "Lokacija",
+    "address": "Adresa",
+    "phone": "Telefon",
+    "email": "E-mail",
+    "sendMessage": "Pošalji poruku",
+    "yourName": "Vaše ime",
+    "yourEmail": "Vaš e-mail",
+    "yourMessage": "Vaša poruka",
+    "send": "Pošalji",
+    "hero": {
+      "title": {
+        "part1": "Otkrijte",
+        "part2": "prirodni",
+        "part3": "mir"
+      },
+      "description": "Odmorite se i napunite energijom u prekrasnom okruženju gdje se udobnost susreće sa spokojem.",
+      "book_now": "Rezerviraj",
+      "excellence_badge": "Izvrstan izbor"
+    },
+    "rooms_section": {
+        "title": "Naše sobe",
+        "description": "Otkrijte naše jedinstveno dizajnirane sobe, od kojih svaka nudi savršen sklad udobnosti i stila",
+        "details": "Detalji",
+        "amenities": {
+            "king_size": "King size krevet",
+            "queen_size": "Queen size krevet",
+            "twin_beds": "Twin kreveti",
+            "ac": "Klima uređaj",
+            "wifi": "Wifi",
+            "tv": "Smart TV",
+            "minibar": "Mini bar",
+            "safe": "Sef",
+            "kitchen": "Potpuno opremljena kuhinja",
+            "balcony": "Balkon",
+            "sea_view": "Pogled na more",
+            "washing_machine": "Perilica rublja",
+            "jacuzzi": "Jacuzzi",
+            "workspace": "Radni prostor",
+            "coffee_maker": "Aparat za kavu",
+            "mini_kitchen": "Mini kuhinja",
+            "terrace": "Terasa",
+            "garden": "Pristup vrtu"
+        },
+        "room_types": {
+            "room1": {
+                "title": "Soba 1",
+                "description": "Elegantna, moderna soba za dvije osobe"
+            },
+            "room2": {
+                "title": "Soba 2",
+                "description": "Prostran apartman s dvije spavaće sobe za obitelji"
+            },
+            "room3": {
+                "title": "Soba 3",
+                "description": "Moderni studio apartman s prekrasnim pogledom na Jadransko more"
+            },
+            "room4": {
+                "title": "Soba 4",
+                "description": "Apartman s tri spavaće sobe i dvije kupaonice za veće obitelji"
+            },
+            "room5": {
+                "title": "Soba 5",
+                "description": "Prizemni apartman s pristupom vrtu"
+            },
+            "room6": {
+                "title": "Soba 6",
+                "description": "Ekskluzivni penthouse apartman s panoramskim pogledom i jacuzzijem"
+            },
+            "room7": {
+                "title": "Soba 7",
+                "description": "Praktično uređena soba po pristupačnoj cijeni"
+            },
+            "room8": {
+                "title": "Soba 8",
+                "description": "Romantični apartman s privatnim balkonom"
+            },
+            "room9": {
+                "title": "Soba 9",
+                "description": "Moderna soba s dodatnim sadržajima za udobnost"
+            },
+            "room10": {
+                "title": "Soba 10",
+                "description": "Elegantni dvoetažni apartman s galerijom"
+            },
+            "outdoor": {
+                "title": "Vanjski prostor",
+                "description": "Prekrasan vanjski prostor i okoliš Villa Laki Rab"
+            }
+        },
+        "rooms": {
+            "room1": {
+                "title": "Naziv sobe",
+                "description": "Opis sobe"
+            }
+        },
+        "size": "{{size}} m²",
+        "capacity": "{{capacity}} osoba",
+        "capacity_unit": "osoba",
+        "room_modal": {
+            "price_per_night": "Cijena po noćenju",
+            "book_now": "Rezerviraj"
+        },
+        "price": "{{price}} €"
+    },
+    "amenities_section": {
+        "title": "Sadržaji Villa Laki Rab",
+        "subtitle": "Najpopularnije usluge",
+        "categories": {
+            "stay": {
+                "title": "Savršeno za Vaš boravak",
+                "items": [
+                    "Privatna kupaonica",
+                    "Besplatni parking",
+                    "Besplatni WiFi",
+                    "Dozvoljeni kućni ljubimci",
+                    "Plaža",
+                    "Klima uređaj",
+                    "Obiteljske sobe",
+                    "Televizor s ravnim ekranom",
+                    "Prostor za piknik"
+                ]
+            },
+            "outdoor": {
+                "title": "Vanjski sadržaji",
+                "items": [
+                    "Ognjište",
+                    "Prostor za piknik",
+                    "Vrtni namještaj",
+                    "Sunčalište",
+                    "Privatna plaža",
+                    "Terasa",
+                    "Vrt"
+                ]
+            },
+            "kitchen": {
+                "title": "Kuhinja",
+                "items": [
+                    "Zajednička kuhinja",
+                    "Blagovaonski stol",
+                    "Kuhinjska oprema",
+                    "Kuhalo za vodu",
+                    "Hladnjak"
+                ]
+            },
+            "bathroom": {
+                "title": "Kupaonica",
+                "items": [
+                    "Toaletni papir",
+                    "Ručnici",
+                    "Privatna kupaonica",
+                    "Toalet",
+                    "Sušilo za kosu",
+                    "Tuš"
+                ]
+            },
+            "bedroom": {
+                "title": "Spavaća soba",
+                "items": [
+                    "Posteljina",
+                    "Ormar"
+                ]
+            },
+            "view": {
+                "title": "Pogled",
+                "items": [
+                    "Pogled na vrt",
+                    "Pogled na more",
+                    "Pogled"
+                ]
+            },
+            "languages": {
+                "title": "Jezici kojima se govori",
+                "items": [
+                    "Njemački",
+                    "Engleski",
+                    "Hrvatski",
+                    "Mađarski",
+                    "Talijanski"
+                ]
+            }
+        },
+        "top_amenities": {
+            "free_parking": "besplatni parking",
+            "free_wifi": "besplatni WiFi",
+            "family_rooms": "obiteljske sobe",
+            "non_smoking": "sobe za nepušače",
+            "bar": "bar",
+            "private_beach": "privatna plaža"
+        },
+        "internet_title": "Internet",
+        "internet_description": "Besplatni WiFi dostupan je u cijelom objektu.",
+        "parking_title": "Parking",
+        "parking_description": "Besplatno privatno parkiralište dostupno je na licu mjesta (nije potrebna rezervacija)."
+    },
+    "faq_section": {
+        "title": "Često postavljana pitanja",
+        "subtitle": "Sve što trebate znati",
+        "questions": [
+            {
+                "question": "Koje je vrijeme prijave i odjave?",
+                "answer": "Prijava je moguća od 14:00 sati, a odjava do 10:00 sati. Ako trebate doći ili otići u drugo vrijeme, molimo vas da nas unaprijed obavijestite."
+            },
+            {
+                "question": "Ima li besplatnog parkinga?",
+                "answer": "Da, osiguravamo besplatno privatno parkiralište za naše goste u sklopu objekta. Nije potrebna rezervacija."
+            },
+            {
+                "question": "Prihvaćate li kreditne kartice?",
+                "answer": "Da, prihvaćamo Visa i Mastercard kartice. Moguće je plaćanje i gotovinom te bankovnom doznakom."
+            },
+            {
+                "question": "Jesu li kućni ljubimci dozvoljeni?",
+                "answer": "Da, kućni ljubimci su dobrodošli uz prethodni dogovor. Molimo vas da nas obavijestite ako planirate dovesti kućnog ljubimca."
+            },
+            {
+                "question": "Ima li klima uređaj?",
+                "answer": "Da, sve naše sobe opremljene su klima uređajima kojima se može individualno upravljati."
+            },
+            {
+                "question": "Koliko je udaljena plaža?",
+                "answer": "Naša privatna plaža nalazi se direktno ispred objekta, približno 50 metara od apartmana."
+            }
+        ]
+    },
+    "contact_section": {
+        "title": "Kontakt",
+        "subtitle": "Kontaktirajte nas",
+        "form": {
+            "title": "Pošaljite nam poruku",
+            "name": "Ime",
+            "name_placeholder": "Vaše ime",
+            "email": "Email",
+            "email_placeholder": "Vaša email adresa",
+            "message": "Poruka",
+            "message_placeholder": "Napišite svoju poruku...",
+            "submit": "Pošalji poruku"
+        },
+        "info": {
+            "address": {
+                "title": "Adresa",
+                "value": "Barbat 744, Rab 51280, Hrvatska"
+            },
+            "phone": {
+                "title": "Telefon",
+                "value": "+385 99 3333 333"
+            },
+            "email": {
+                "title": "Email",
+                "value": "info@villalakirab.com"
+            },
+            "hours": {
+                "title": "Radno vrijeme",
+                "value": "Check-in: 14:00 - 23:00\nCheck-out: 6:00 - 10:00"
+            }
+        }
+    },
+    "weather": {
+        "title": "Današnje vrijeme u Rabu",
+        "feels_like": "Osjet",
+        "humidity": "Vlažnost",
+        "loading": "Učitavanje vremena...",
+        "error": "Podaci o vremenu nisu dostupni"
+    }
+}
