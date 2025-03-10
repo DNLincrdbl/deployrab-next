@@ -86,10 +86,20 @@ const About = () => {
             <video
               ref={videoRef}
               controls
+              preload="metadata"
+              playsInline
               className="w-full h-full object-cover"
-              src="/video/dronvideo.mp4"
+              onError={(e) => {
+                const error = e.currentTarget.error;
+                console.error('Video error details:', {
+                  code: error?.code,
+                  message: error?.message,
+                  type: error?.name
+                });
+              }}
             >
-              <source src="/video/dronvideo.mp4" type="video/mp4" />
+              <source src="/video/video2.mp4" type="video/mp4" />
+              <source src="/video/video2.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
           </div>

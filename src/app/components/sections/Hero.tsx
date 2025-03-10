@@ -8,34 +8,48 @@ export default function Hero() {
   const { t } = useTranslation();
 
   return (
-    <section className="flex items-center justify-center min-h-[calc(100vh-80px)] bg-white pt-28 lg:pt-0">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+    <section className="relative flex items-center justify-center min-h-screen">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/backgroundimage.webp"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          quality={100}
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-24 mt-16 lg:mt-0">
           <div className="flex-1 text-center lg:text-left">
-            <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-7xl font-bold text-white mb-3 sm:mb-6">
               {t('hero.title.part1')}
-              <span className="block text-[#007AFF] mt-2">{t('hero.title.part2')} </span>
+              <span className="block text-[#007AFF] mt-1 sm:mt-2">{t('hero.title.part2')} </span>
               {t('hero.title.part3')}
             </h1>
-            <p className="text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0">
+
+            <p className="text-base sm:text-lg lg:text-xl text-gray-100 mb-6 sm:mb-8 max-w-xl mx-auto lg:mx-0">
               {t('hero.description')}
             </p>
-            <div className="flex flex-col items-center lg:items-start gap-8">
-              <button className="bg-[#007AFF] text-white px-8 py-4 rounded-xl hover:bg-[#007AFF]/90 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-[#007AFF]/20">
+            <div className="flex flex-col items-center lg:items-start gap-4 sm:gap-6">
+              <button className="hidden sm:block bg-[#007AFF] text-white w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl hover:bg-white hover:text-[#007AFF] transition-all duration-300 transform hover:scale-105 shadow-lg text-base sm:text-lg">
                 {t('hero.book_now')}
               </button>
-              <div className="lg:hidden">
+              <div className="lg:hidden backdrop-blur-sm bg-white/5 p-2 rounded-xl shadow-sm w-full max-w-[260px] mx-auto">
                 <Weather />
               </div>
             </div>
           </div>
 
-          <div className="flex-1 relative">
+          <div className="hidden lg:block flex-1 relative">
             <div className="relative">
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#007AFF]/20 to-purple-500/20 rounded-[2rem] blur-2xl" />
+              <div className="absolute -inset-4 bg-gradient-to-r from-[#007AFF]/30 to-purple-500/30 rounded-[2rem] blur-2xl" />
               <div className="relative">
-                <div className="bg-white p-4 rounded-[2rem] shadow-xl">
-                  <div className="overflow-hidden rounded-[1.5rem]">
+                <div className="bg-white/5 backdrop-blur-sm p-2 rounded-[2rem] shadow-sm">
+                  <div className="overflow-hidden rounded-[1.8rem]">
                     <Image 
                       src="/rab-bg.jpg" 
                       alt="Luxury Villa" 
@@ -48,7 +62,7 @@ export default function Hero() {
                 </div>
 
                 <motion.div 
-                  className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl"
+                  className="absolute -bottom-6 -right-6 bg-white/5 backdrop-blur-sm p-2 rounded-xl shadow-sm"
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.7, delay: 0.5 }}
@@ -60,18 +74,25 @@ export default function Hero() {
                       </svg>
                     </div>
                     <div>
-                      <p className="text-gray-900 font-semibold">{t('hero.excellence_badge')}</p>
+                      <p className="text-white font-semibold">{t('hero.excellence_badge')}</p>
                     </div>
                   </div>
                 </motion.div>
               </div>
             </div>
             
-            <div className="hidden lg:block absolute -bottom-20 -left-20">
+            <div className="hidden lg:block absolute -bottom-20 -left-20 backdrop-blur-sm bg-white/5 p-2 rounded-xl shadow-sm">
               <Weather />
             </div>
           </div>
         </div>
+      </div>
+
+      {/* Scroll Indicator */}
+      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
       </div>
     </section>
   );
