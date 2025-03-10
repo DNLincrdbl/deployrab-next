@@ -93,8 +93,7 @@ const About = () => {
                 const error = e.currentTarget.error;
                 console.error('Video error details:', {
                   code: error?.code,
-                  message: error?.message,
-                  type: error?.name
+                  message: error?.message
                 });
               }}
             >
