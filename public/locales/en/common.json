@@ -29,8 +29,9 @@
         },
         "description": "Rest and recharge in a stunning environment where comfort meets serenity.",
         "book_now": "Book Now",
-        "excellence_badge": "Excellent Choice"
-      },
+        "excellence_badge": "Excellent Choice",
+        "scroll_down": "Scroll Down"
+    },
     "rooms_section": {
         "title": "Our Rooms",
         "description": "Discover our uniquely designed rooms, each offering the perfect harmony of comfort and style",

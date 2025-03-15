@@ -302,22 +302,29 @@ const Navbar = () => {
               : 'opacity-0 -translate-y-2 pointer-events-none'
           }`}
         >
-          <div className="bg-white shadow-sm">
+          <div className="bg-white/95 backdrop-blur-md">
             <div className="container mx-auto">
-              <div className="flex flex-col py-4">
+              <div className="flex flex-col py-8 px-6 space-y-6">
                 {navLinks.map((link) => (
                   <button
                     key={link.href}
                     onClick={() => scrollToSection(link.href)}
-                    className="py-3 text-gray-600 hover:text-[#007AFF] transition-colors duration-200 text-lg font-medium"
+                    className={`flex items-center text-gray-600 transition-all duration-300 text-lg font-medium relative ${
+                      activeSection === link.href ? 'text-primary translate-x-2' : 'hover:translate-x-2'
+                    }`}
                   >
-                    {link.label}
+                    <div className="flex items-center gap-3">
+                      {activeSection === link.href && (
+                        <div className="w-6 h-[2px] bg-primary rounded-full" />
+                      )}
+                      <span>{link.label}</span>
+                    </div>
                   </button>
                 ))}
                 <div className="pt-4">
                   <a 
                     href="https://www.booking.com/hotel/hr/villa-laki-rab-rab.hu.html" 
-                    className="block w-32 mx-auto bg-[#007AFF] text-white text-center py-2 px-4 rounded-lg text-sm font-medium hover:bg-[#007AFF]/90 transition-colors duration-300"
+                    className="block w-full bg-primary text-white text-center py-4 rounded-xl text-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/10"
                   >
                     {t('booking')}
                   </a>
