@@ -44,7 +44,7 @@ const AmenitiesSection = () => {
   ];
 
   return (
-    <section id="amenities-section" className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-gray-900 text-center mb-4">{t('amenities_section.title')}</h2>
         <p className="text-xl text-gray-600 text-center mb-16">{t('amenities_section.subtitle')}</p>

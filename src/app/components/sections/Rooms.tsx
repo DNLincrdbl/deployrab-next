@@ -133,9 +133,9 @@ const rooms: Room[] = [
     size: "45",
     capacity: "4",
     images: [
-      '/rablaki7813759.jpg',
-      '/595182578.jpg',
-      '/rablaki7813737.jpg'
+      '/Room5/villalaki5.jpg',
+      '/Room5/villalaki5.1.jpg',
+      '/Room5/villalaki5.3.jpg'
     ],
     amenities: ['garden', 'terrace', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine']
   },
@@ -173,9 +173,13 @@ const rooms: Room[] = [
     size: "22",
     capacity: "2",
     images: [
-      '/rablaki7813755.jpg',
-      '/595182562.jpg',
-      '/rablaki7813759.jpg'
+      '/Room7/szoba7.jpg',
+      '/Room7/villalaki3.jpg',
+      '/Room7/villalaki4.jpg',
+      '/Room7/villalaki5.jpg',
+      '/Room7/villalaki6.jpg',
+      '/Room7/villalaki7.jpg',
+      '/Room7/villalaki8.jpg'
     ],
     amenities: ['twin_beds', 'ac', 'wifi', 'tv', 'mini_fridge']
   },
@@ -186,22 +190,24 @@ const rooms: Room[] = [
     size: "40",
     capacity: "2",
     images: [
-      '/Room3/Lakatos_Banjol-133.jpg',
-      '/Room3/Lakatos_Banjol-134.jpg',
-      '/Room3/Lakatos_Banjol-135.jpg',
-      '/Room3/Lakatos_Banjol-136.jpg',
-      '/Room3/Lakatos_Banjol-137.jpg',
-      '/Room3/Lakatos_Banjol-138.jpg',
-      '/Room3/Lakatos_Banjol-139.jpg',
-      '/Room3/Lakatos_Banjol-140.jpg',
-      '/Room3/Lakatos_Banjol-141.jpg',
-      '/Room3/Lakatos_Banjol-142.jpg',
-      '/Room3/Lakatos_Banjol-143.jpg',
-      '/Room3/Lakatos_Banjol-144.jpg',
-      '/Room3/Lakatos_Banjol-145.jpg',
-      '/Room3/Lakatos_Banjol-146.jpg',
-      '/Room3/Lakatos_Banjol-147.jpg',
-      '/Room3/Lakatos_Banjol-148.jpg'
+      '/Room8/Lakatos_Banjol-132.jpg',
+      '/Room8/Lakatos_Banjol-133.jpg',
+      '/Room8/Lakatos_Banjol-134.jpg',
+      '/Room8/Lakatos_Banjol-135.jpg',
+      '/Room8/Lakatos_Banjol-136.jpg',
+      '/Room8/Lakatos_Banjol-137.jpg',
+      '/Room8/Lakatos_Banjol-138.jpg',
+      '/Room8/Lakatos_Banjol-139.jpg',
+      '/Room8/Lakatos_Banjol-140.jpg',
+      '/Room8/Lakatos_Banjol-141.jpg',
+      '/Room8/Lakatos_Banjol-142.jpg',
+      '/Room8/Lakatos_Banjol-143.jpg',
+      '/Room8/Lakatos_Banjol-144.jpg',
+      '/Room8/Lakatos_Banjol-145.jpg',
+      '/Room8/Lakatos_Banjol-146.jpg',
+      '/Room8/Lakatos_Banjol-147.jpg',
+      '/Room8/Lakatos_Banjol-148.jpg',
+      '/Room8/Lakatos_Banjol-149.jpg'
     ],
     amenities: ['king_size', 'luxury_bath', 'balcony', 'ac', 'wifi', 'tv', 'minibar']
   },
@@ -340,47 +346,67 @@ const RoomCard = ({ room, onClick }: { room: Room; onClick: () => void }) => {
   
   return (
     <div
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer"
+      className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer h-[460px] flex flex-col border border-gray-100"
       onClick={onClick}
     >
-      <div className="aspect-[4/3] overflow-hidden">
+      {/* Image Container with Gradient Overlay */}
+      <div className="h-[280px] overflow-hidden relative">
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 group-hover:opacity-0 transition-opacity duration-300" />
         <Image 
           src={room.images[0]} 
           alt={t(`rooms_section.room_types.${room.type}.title`)} 
-          layout="responsive" 
           width={400} 
           height={300} 
-          className="w-full h-full bg-cover bg-center transform group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300 ease-out"
         />
       </div>
 
-      <div className="p-6">
-        <h3 className="text-2xl font-bold text-gray-900 mb-2">
+      <div className="p-6 flex-1 flex flex-col relative">
+        {/* Title with Modern Typography */}
+        <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
           {t(`rooms_section.room_types.${room.type}.title`)}
         </h3>
         
-        <div className="flex items-center gap-4 mb-6 text-gray-500">
-          <div className="flex items-center gap-1">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" 
-              />
-            </svg>
-            <span>{room.size}m²</span>
-          </div>
-          <div className="flex items-center gap-1">
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        {/* Amenities with Improved Layout */}
+        <div className="flex flex-wrap items-center gap-4 mb-auto text-gray-600">
+          <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
                 d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" 
               />
             </svg>
-            <span>{room.capacity} {t('rooms_section.capacity_unit')}</span>
+            <span className="text-sm">{room.capacity} {t('rooms_section.capacity_unit')}</span>
           </div>
+          {room.amenities.includes('balcony') && (
+            <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full" title={t('rooms_section.amenities.balcony')}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                  d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" 
+                />
+              </svg>
+              <span className="text-sm">{t('rooms_section.amenities.balcony')}</span>
+            </div>
+          )}
+          {room.amenities.includes('sea_view') && (
+            <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full" title={t('rooms_section.amenities.sea_view')}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" 
+                />
+              </svg>
+              <span className="text-sm">{t('rooms_section.amenities.sea_view')}</span>
+            </div>
+          )}
         </div>
 
-        <div className="flex justify-between items-center">
-          <span className="text-gray-400 group-hover:text-primary transition-colors duration-300">
-            {t('rooms_section.details')} →
+        {/* Modern Details Button */}
+        <div className="mt-6 flex justify-between items-center relative">
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+          <span className="text-primary font-medium group-hover:translate-x-2 transition-transform duration-300 ease-out flex items-center gap-2">
+            {t('rooms_section.details')}
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+            </svg>
           </span>
         </div>
       </div>

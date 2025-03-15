@@ -7,8 +7,15 @@ import Weather from './Weather';
 export default function Hero() {
   const { t } = useTranslation();
 
+  const scrollToNextSection = () => {
+    const roomsSection = document.getElementById('about');
+    if (roomsSection) {
+      roomsSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section className="relative flex items-center justify-center min-h-screen">
+    <section id="hero" className="relative flex items-center justify-center min-h-screen">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -89,11 +96,36 @@ export default function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
-      </div>
+      <motion.button
+        onClick={scrollToNextSection}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer group lg:mb-20"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ 
+          opacity: 1, 
+          y: 0,
+          transition: { duration: 0.8, delay: 1 }
+        }}
+        whileHover={{ scale: 1.1 }}
+      >
+        <motion.div
+          animate={{ 
+            y: [0, 8, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+          className="text-white flex flex-col items-center gap-2"
+        >
+          <span className="text-sm font-medium opacity-80 group-hover:opacity-100 transition-opacity">
+            Görgess lejjebb
+          </span>
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </motion.div>
+      </motion.button>
     </section>
   );
 }

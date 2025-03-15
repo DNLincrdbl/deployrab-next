@@ -3,6 +3,9 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AnimationWrapper from './components/sections/AnimationWrapper';
 import ScrollToTop from './components/sections/ScrollToTop';
+import Navbar from './components/navigation/Navbar';
+import Footer from './components/sections/Footer';
+
 const inter = Inter({ subsets: ["latin"] });
 
 import "../i18n/i18n";
@@ -18,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="hu">
       <head>
         <meta 
           name="viewport" 
@@ -26,10 +29,14 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <AnimationWrapper>
-          {children}
-          <ScrollToTop />
-        </AnimationWrapper>
+        <Navbar />
+        <main>
+          <AnimationWrapper>
+            {children}
+            <ScrollToTop />
+          </AnimationWrapper>
+        </main>
+        <Footer />
       </body>
     </html>
   );

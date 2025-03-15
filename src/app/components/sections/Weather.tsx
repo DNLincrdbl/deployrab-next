@@ -9,6 +9,7 @@ interface WeatherData {
   description: string;
   icon: string;
 }
+
 const Weather = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
   const [loading, setLoading] = useState(true);

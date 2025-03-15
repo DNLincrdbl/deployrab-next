@@ -18,6 +18,8 @@
     "rooms": "Szobák",
     "contact": "Kapcsolat",
     "booking": "Foglalás",
+    "amenities": "Szolgáltatások",
+    "faq": "GYIK",
 
     "book_now": "Foglaljon most",
     "hero": {
@@ -281,5 +283,17 @@
     "humidity": "Páratartalom",
     "loading": "Időjárás betöltése...",
     "error": "Időjárás adatok nem elérhetőek"
+  },
+  "footer": {
+    "quick_links": "Gyors linkek",
+    "rooms": "Szobák",
+    "location": "Helyszín",
+    "gallery": "Galéria",
+    "contact": "Kapcsolat",
+    "follow_us": "Kövess minket",
+    "book_now": "Foglalás",
+    "all_rights": "Minden jog fenntartva.",
+    "privacy": "Adatvédelem",
+    "terms": "Felhasználási feltételek"
   }
 }
