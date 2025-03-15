@@ -9,6 +9,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const { t, i18n } = useTranslation();
 
   useEffect(() => {
@@ -25,6 +26,25 @@ const Navbar = () => {
       } else {
         setIsScrolled(false);
       }
+
+      // Improved section detection
+      const sections = ['home', 'about', 'rooms', 'contact'];
+      let currentSection = 'home';
+      let minDistance = Infinity;
+
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          const distance = Math.abs(rect.top);
+          if (distance < minDistance) {
+            minDistance = distance;
+            currentSection = section;
+          }
+        }
+      });
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -58,17 +78,17 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${
+    <nav className={`fixed w-full z-50 transition-all duration-700 ease-in-out ${
       isScrolled || isOpen
-        ? 'bg-white shadow-md' 
-        : 'backdrop-blur-[2px]'
+        ? 'bg-white/95 backdrop-blur-sm shadow-lg' 
+        : 'bg-transparent'
     }`}>
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           
           <div 
             onClick={() => scrollToSection('home')}
-            className={`text-2xl font-bold cursor-pointer transition-colors duration-300 ${
+            className={`text-2xl font-bold cursor-pointer transition-all duration-300 ${
               isScrolled 
                 ? 'text-primary' 
                 : isOpen
@@ -80,19 +100,50 @@ const Navbar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className={`transition-colors duration-300 font-medium cursor-pointer ${
-                  isScrolled 
-                    ? 'text-gray-700 hover:text-primary' 
-                    : 'text-white/90 hover:text-white'
-                }`}
-              >
-                {link.label}
-              </button>
-            ))}
+            <div className="relative flex items-center">
+              <div 
+                className={`absolute transition-all duration-500 ease-in-out ${
+                  isScrolled ? 'bg-primary/10' : 'bg-white/10'
+                } rounded-full -z-10`}
+                style={{
+                  left: `${navLinks.findIndex(l => l.href === activeSection) * 100}%`,
+                  width: '100%',
+                  height: '100%',
+                  transform: 'translateX(0)',
+                }}
+              />
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => {
+                    const element = document.getElementById(link.href);
+                    if (element) {
+                      const navbarHeight = 80;
+                      const elementPosition = element.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+
+                      window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                      });
+                      setActiveSection(link.href);
+                    }
+                  }}
+                  className={`relative px-6 py-2 transition-colors duration-300 font-medium cursor-pointer group ${
+                    isScrolled 
+                      ? 'text-gray-700 hover:text-primary' 
+                      : 'text-white'
+                  } ${activeSection === link.href ? (isScrolled ? 'text-primary' : 'text-white') : ''}`}
+                >
+                  <span className="relative z-10">{link.label}</span>
+                  <div 
+                    className={`absolute inset-0 rounded-full transition-opacity duration-300 opacity-0 group-hover:opacity-100 -z-10 ${
+                      isScrolled ? 'bg-primary/5' : 'bg-white/5'
+                    }`} 
+                  />
+                </button>
+              ))}
+            </div>
             <button className="bg-primary text-white px-6 py-2 rounded-full hover:bg-primary/90 transition-colors duration-300">
               <a href="https://www.booking.com/hotel/hr/villa-laki-rab-rab.hu.html">{t('booking')}</a>
             </button>
@@ -102,8 +153,8 @@ const Navbar = () => {
                 onClick={() => setIsLanguageOpen(!isLanguageOpen)}
                 className={`flex items-center space-x-1.5 px-3 py-1.5 rounded-md transition-all duration-200 text-sm ${
                   isScrolled 
-                    ? 'border border-gray-200 hover:border-gray-300' 
-                    : 'border border-white/20 hover:border-white/40'
+                    ? 'border border-gray-200 hover:border-gray-300 bg-white' 
+                    : 'border border-white/20 bg-transparent'
                 }`}
               >
                 {i18n.language === 'hu' && <HU className="w-5 h-5" />}
