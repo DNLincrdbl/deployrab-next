@@ -92,17 +92,6 @@ const About = () => {
               </video>
             </div>
           </div>
-
-          <div className="mt-12 text-center">
-            <a 
-              href="https://www.booking.com/hotel/hr/villa-laki-rab-rab.hu.html"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors inline-block"
-            >
-              {t('about_section.book_now')}
-            </a>
-          </div>
         </div>
       </div>
     </section>
