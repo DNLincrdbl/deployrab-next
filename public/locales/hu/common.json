@@ -3,17 +3,17 @@
     "about": "Rólunk",
     "about_section": {
         "title": {
-            "first": "Fedezze fel a tökéletes",
-            "second": "pihenés otthonát"
+            "first": "Fedezze fel",
+            "second": "Rab sziget gyöngyszemét"
         },
-        "description": "Szálláshelyünk több mint egy évtizede nyújt felejthetetlen élményeket vendégeinek. Modern kényelem és tradicionális vendégszeretet találkozik nálunk, hogy az Ön pihenése tökéletes legyen.",
+        "description": "A Villa Laki egy családi tulajdonban lévő, modern kényelemmel felszerelt apartmanház Rab sziget szívében. Közvetlen tengerparti fekvésével, lenyűgöző kilátással és személyre szabott szolgáltatásokkal várjuk vendégeinket egész évben.",
         "stats": {
             "experience": "Év tapasztalat",
             "guests": "Elégedett vendég",
             "rating": "Értékelési átlag",
             "returning": "Visszatérő vendég"
         },
-        "cta": "Ismerje meg szolgáltatásainkat"
+        "cta": "Fedezze fel szolgáltatásainkat"
     },
     "rooms": "Szobák",
     "contact": "Kapcsolat",
@@ -289,7 +289,6 @@
     "quick_links": "Gyors linkek",
     "rooms": "Szobák",
     "location": "Helyszín",
-    "gallery": "Galéria",
     "contact": "Kapcsolat",
     "follow_us": "Kövess minket",
     "book_now": "Foglalás",

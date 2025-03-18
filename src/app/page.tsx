@@ -2,16 +2,12 @@ import Hero from "@/app/components/sections/Hero";
 import Rooms from "@/app/components/sections/Rooms";
 import About from "@/app/components/sections/About";
 import Contact from "@/app/components/sections/Contact";
-import Navbar from "@/app/components/navigation/Navbar";
 import FAQ from "@/app/components/sections/FAQ";
 import Amenities from "@/app/components/sections/Amenities";
 
-
 export default function Home() {
   return (
-    <main>
-      <Navbar />
-      
+    <main>      
       <section id="home">
         <Hero />
       </section>

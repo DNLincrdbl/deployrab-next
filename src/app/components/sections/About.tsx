@@ -35,6 +35,13 @@ const About = () => {
     const video = videoRef.current;
     if (!video) return;
 
+    // Load the first frame as preview
+    video.addEventListener('loadeddata', () => {
+      if (video.readyState >= 2) {
+        video.currentTime = 0.1;
+      }
+    });
+
     const player = new Plyr(video, {
       controls: [
         'play-large',
@@ -44,12 +51,9 @@ const About = () => {
         'mute',
         'volume',
         'fullscreen'
-      ]
-    });
-
-    // Debug
-    video.addEventListener('error', (e) => {
-      console.error('Video error:', e);
+      ],
+      autopause: true,
+      resetOnEnd: true
     });
 
     return () => {
@@ -57,73 +61,44 @@ const About = () => {
     };
   }, []);
 
-  const stats = [
-    { number: '10+', label: t('about_section.stats.experience') },
-    { number: '1000+', label: t('about_section.stats.guests') },
-    { number: '4.9', label: t('about_section.stats.rating') },
-    { number: '95%', label: t('about_section.stats.returning') },
-  ];
-
   return (
-    <section id="about-section" className="py-20 bg-white">
+    <section id="about-section" className="py-20 md:pb-20 pb-32 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-            <video
-              ref={videoRef}
-              controls
-              preload="metadata"
-              playsInline
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                const error = e.currentTarget.error;
-                console.error('Video error details:', {
-                  code: error?.code,
-                  message: error?.message
-                });
-              }}
-            >
-              <source src="/video/video2.mp4" type="video/mp4" />
-              <source src="/video/video2.webm" type="video/webm" />
-              Your browser does not support the video tag.
-            </video>
+        <div className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            {t('about_section.title.first')}
+            <span className="text-primary block mt-2">{t('about_section.title.second')}</span>
+          </h2>
+          <p className="text-gray-600 text-base md:text-lg leading-relaxed">
+            {t('about_section.description')}
+          </p>
+        </div>
+
+        <div className="max-w-2xl mx-auto">
+          <div className={`relative rounded-xl overflow-hidden shadow-xl transition-all duration-1000 ${
+            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+          }`}>
+            <div className="aspect-video">
+              <video
+                ref={videoRef}
+                controls
+                preload="metadata"
+                playsInline
+                className="w-full h-full object-cover"
+              >
+                <source src="/video/video2.mp4" type="video/mp4" />
+                <source src="/video/video2.webm" type="video/webm" />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
 
-          <div className={`transition-all duration-1000 delay-300 ${
-            isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
-          }`}>
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              {t('about_section.title.first')}
-              <span className="text-primary block">{t('about_section.title.second')}</span>
-            </h2>
-
-            <p className="text-gray-600 mb-8 text-lg leading-relaxed">
-              {t('about_section.description')}
-            </p>
-
-            <div className="grid grid-cols-2 gap-8 mb-10">
-              {stats.map((stat, index) => (
-                <div 
-                  key={index}
-                  className={`transition-all duration-700 delay-${index * 200} ${
-                    isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                  }`}
-                >
-                  <div className="text-3xl font-bold text-primary mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600">
-                    {stat.label}
-                  </div>
-                </div>
-              ))}
-            </div>
-
+          <div className="mt-12 text-center">
             <button 
               onClick={() => {
                 document.getElementById('amenities-section')?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="bg-primary text-white px-8 py-3 rounded-full hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 group"
+              className="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 group mx-auto text-base"
             >
               {t('about_section.cta')}
               <svg 

@@ -3,10 +3,10 @@
     "about": "O nama",
     "about_section": {
         "title": {
-            "first": "Otkrijte savršeni",
-            "second": "dom za opuštanje"
+            "first": "Otkrijte",
+            "second": "biser otoka Raba"
         },
-        "description": "Već više od desetljeća naš smještaj pruža nezaboravna iskustva našim gostima. Ovdje se moderni komfor susreće s tradicionalnim gostoprimstvom kako bi vaš odmor bio savršen.",
+        "description": "Villa Laki je obiteljska, moderna kuća za odmor u srcu otoka Raba. S direktnim pristupom plaži, prekrasnim pogledom i personaliziranim uslugama, dočekujemo naše goste tijekom cijele godine.",
         "stats": {
             "experience": "Godina iskustva",
             "guests": "Zadovoljnih gostiju",
@@ -285,5 +285,16 @@
         "humidity": "Vlažnost",
         "loading": "Učitavanje vremena...",
         "error": "Podaci o vremenu nisu dostupni"
+    },
+    "footer": {
+        "quick_links": "Brze poveznice",
+        "rooms": "Sobe",
+        "location": "Lokacija",
+        "contact": "Kontakt",
+        "follow_us": "Pratite nas",
+        "book_now": "Rezerviraj",
+        "all_rights": "Sva prava pridržana.",
+        "privacy": "Privatnost",
+        "terms": "Uvjeti korištenja"
     }
 }

@@ -3,7 +3,6 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import AnimationWrapper from './components/sections/AnimationWrapper';
 import ScrollToTop from './components/sections/ScrollToTop';
-import Navbar from './components/navigation/Navbar';
 import Footer from './components/sections/Footer';
 
 const inter = Inter({ subsets: ["latin"] });
@@ -29,14 +28,13 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className}>
-        <Navbar />
-        <main>
-          <AnimationWrapper>
+        <AnimationWrapper>
+          <main>
             {children}
             <ScrollToTop />
-          </AnimationWrapper>
-        </main>
-        <Footer />
+          </main>
+          <Footer />
+        </AnimationWrapper>
       </body>
     </html>
   );

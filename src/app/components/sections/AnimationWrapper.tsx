@@ -9,24 +9,36 @@ export default function AnimationWrapper({
   children: React.ReactNode;
 }) {
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
+  const [isContentVisible, setIsContentVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    // Amikor az animáció befejeződik
+    const animationTimer = setTimeout(() => {
       setIsAnimationComplete(true);
+      // Görgetés a tetejére
+      window.scrollTo(0, 0);
+      // Rövid késleltetés után jelenítjük meg a tartalmat
+      setTimeout(() => {
+        setIsContentVisible(true);
+      }, 100);
     }, 3500);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(animationTimer);
+    };
   }, []);
 
   return (
     <>
       <WelcomeAnimation />
-      {isAnimationComplete && (
-        <>
-          <Navbar />
-          {children}
-        </>
-      )}
+      <div className={`transition-opacity duration-300 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
+        {isAnimationComplete && (
+          <>
+            <Navbar />
+            {children}
+          </>
+        )}
+      </div>
     </>
   );
 }

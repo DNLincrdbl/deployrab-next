@@ -3,10 +3,10 @@
     "about": "About",
     "about_section": {
         "title": {
-            "first": "Discover the perfect",
-            "second": "home of relaxation"
+            "first": "Discover",
+            "second": "the pearl of Rab island"
         },
-        "description": "For over a decade, our accommodation has been providing unforgettable experiences to our guests. Modern comfort meets traditional hospitality here to make your relaxation perfect.",
+        "description": "Villa Laki is a family-owned, modern apartment house in the heart of Rab island. With its direct beachfront location, breathtaking views, and personalized services, we welcome our guests all year round.",
         "stats": {
             "experience": "Years of experience",
             "guests": "Satisfied guests",
@@ -274,6 +274,17 @@
         "humidity": "Humidity",
         "loading": "Loading weather...",
         "error": "Weather data unavailable"
+    },
+    "footer": {
+        "quick_links": "Quick Links",
+        "rooms": "Rooms",
+        "location": "Location",
+        "contact": "Contact",
+        "follow_us": "Follow Us",
+        "book_now": "Book Now",
+        "all_rights": "All rights reserved.",
+        "privacy": "Privacy Policy",
+        "terms": "Terms of Use"
     }
 }
 

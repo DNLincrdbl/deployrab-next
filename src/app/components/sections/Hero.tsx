@@ -7,13 +7,6 @@ import Weather from './Weather';
 export default function Hero() {
   const { t } = useTranslation();
 
-  const scrollToNextSection = () => {
-    const roomsSection = document.getElementById('about');
-    if (roomsSection) {
-      roomsSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen">
       {/* Background Image */}
@@ -93,40 +86,6 @@ export default function Hero() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-12 left-0 right-0 flex justify-center lg:mb-20">
-        <motion.button
-          onClick={scrollToNextSection}
-          className="cursor-pointer group text-center backdrop-blur-sm bg-white/10 px-6 py-3 rounded-full border border-white/20 hover:bg-white/20 transition-all duration-300"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ 
-            opacity: 1, 
-            y: 0,
-            transition: { duration: 0.8, delay: 1 }
-          }}
-          whileHover={{ scale: 1.05 }}
-        >
-          <motion.div
-            animate={{ 
-              y: [0, 6, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-            className="text-white flex flex-col items-center gap-2"
-          >
-            <span className="text-sm font-medium opacity-90 group-hover:opacity-100 transition-opacity tracking-wide">
-              {t('hero.scroll_down')}
-            </span>
-            <svg className="w-5 h-5 opacity-80 group-hover:opacity-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-            </svg>
-          </motion.div>
-        </motion.button>
       </div>
     </section>
   );

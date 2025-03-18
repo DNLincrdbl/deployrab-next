@@ -78,19 +78,21 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-700 ease-in-out ${
-      isScrolled || isOpen
-        ? 'bg-white/95 backdrop-blur-sm shadow-lg' 
-        : 'bg-transparent'
-    }`}>
+    <nav 
+      className={`fixed w-full z-50 transition-all duration-500 ease-in-out ${
+        isScrolled || isOpen
+          ? 'bg-white shadow-lg' 
+          : 'bg-transparent'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center h-20">
           
           <div 
             onClick={() => scrollToSection('home')}
-            className={`text-2xl font-bold cursor-pointer transition-all duration-300 ${
+            className={`text-2xl font-bold cursor-pointer transition-all duration-500 ${
               isScrolled 
-                ? 'text-primary' 
+                ? 'text-primary translate-y-0' 
                 : isOpen
                   ? 'text-primary'
                   : 'text-white'
@@ -271,7 +273,7 @@ const Navbar = () => {
 
             <button
               className={`transition-colors duration-300 ${
-                isScrolled ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-white/80'
+                isScrolled || isOpen ? 'text-gray-700 hover:text-primary' : 'text-white hover:text-white/80'
               }`}
               onClick={() => setIsOpen(!isOpen)}
               aria-label="Menu"
@@ -295,41 +297,36 @@ const Navbar = () => {
           </div>
         </div>
 
+        {/* Mobile menu */}
         <div
-          className={`md:hidden fixed top-[80px] left-0 right-0 transition-all duration-500 ease-in-out transform ${
-            isOpen
-              ? 'opacity-100 translate-y-0'
-              : 'opacity-0 -translate-y-2 pointer-events-none'
+          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
+            isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="bg-white/95 backdrop-blur-md">
-            <div className="container mx-auto">
-              <div className="flex flex-col py-8 px-6 space-y-6">
-                {navLinks.map((link) => (
-                  <button
-                    key={link.href}
-                    onClick={() => scrollToSection(link.href)}
-                    className={`flex items-center text-gray-600 transition-all duration-300 text-lg font-medium relative ${
-                      activeSection === link.href ? 'text-primary translate-x-2' : 'hover:translate-x-2'
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      {activeSection === link.href && (
-                        <div className="w-6 h-[2px] bg-primary rounded-full" />
-                      )}
-                      <span>{link.label}</span>
-                    </div>
-                  </button>
-                ))}
-                <div className="pt-4">
-                  <a 
-                    href="https://www.booking.com/hotel/hr/villa-laki-rab-rab.hu.html" 
-                    className="block w-full bg-primary text-white text-center py-4 rounded-xl text-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/10"
-                  >
-                    {t('booking')}
-                  </a>
+          <div className="py-8 px-6 space-y-6">
+            {navLinks.map((link) => (
+              <button
+                key={link.href}
+                onClick={() => scrollToSection(link.href)}
+                className={`flex items-center text-gray-600 transition-all duration-300 text-lg font-medium relative ${
+                  activeSection === link.href ? 'text-primary translate-x-2' : 'hover:translate-x-2'
+                }`}
+              >
+                <div className="flex items-center gap-3">
+                  {activeSection === link.href && (
+                    <div className="w-6 h-[2px] bg-primary rounded-full" />
+                  )}
+                  <span>{link.label}</span>
                 </div>
-              </div>
+              </button>
+            ))}
+            <div className="pt-4">
+              <a 
+                href="https://www.booking.com/hotel/hr/villa-laki-rab-rab.hu.html" 
+                className="block w-full bg-primary text-white text-center py-4 rounded-xl text-lg font-medium hover:bg-primary/90 transition-all duration-300 shadow-lg shadow-primary/10"
+              >
+                {t('booking')}
+              </a>
             </div>
           </div>
         </div>
