@@ -94,27 +94,14 @@ const About = () => {
           </div>
 
           <div className="mt-12 text-center">
-            <button 
-              onClick={() => {
-                document.getElementById('amenities-section')?.scrollIntoView({ behavior: 'smooth' });
-              }}
-              className="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors duration-300 flex items-center gap-2 group mx-auto text-base"
+            <a 
+              href="https://www.booking.com/hotel/hr/villa-laki-rab-rab.hu.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-primary text-white px-6 py-3 rounded-xl hover:bg-primary/90 transition-colors inline-block"
             >
-              {t('about_section.cta')}
-              <svg 
-                className="w-5 h-5 transform transition-transform group-hover:translate-x-1" 
-                fill="none" 
-                stroke="currentColor" 
-                viewBox="0 0 24 24"
-              >
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth="2" 
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </button>
+              {t('about_section.book_now')}
+            </a>
           </div>
         </div>
       </div>
