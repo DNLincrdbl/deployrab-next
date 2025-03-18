@@ -35,7 +35,7 @@ export default function Hero() {
               {t('hero.description')}
             </p>
             <div className="flex flex-col items-center lg:items-start gap-4 sm:gap-6">
-              <button className="hidden sm:block bg-[#007AFF] text-white w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl hover:bg-white hover:text-[#007AFF] transition-all duration-300 transform hover:scale-105 shadow-lg text-base sm:text-lg">
+              <button className="hidden sm:block bg-[#007AFF] text-white w-full sm:w-auto px-6 sm:px-8 py-3 rounded-xl hover:bg-white hover:text-[#007AFF] transition-all duration-300 shadow-lg text-base sm:text-lg">
                 {t('hero.book_now')}
               </button>
               <div className="lg:hidden backdrop-blur-sm bg-white/5 p-2 rounded-xl shadow-sm w-full max-w-[260px] mx-auto">

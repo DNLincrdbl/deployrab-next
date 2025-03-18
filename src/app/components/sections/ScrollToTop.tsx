@@ -4,8 +4,22 @@ import { useState, useEffect } from 'react';
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
 
+  const isModalOpen = () => {
+    // Ellenőrizzük mindkét típusú modal meglétét
+    const amenitiesModal = document.querySelector('.fixed.inset-0.bg-black\\/40');
+    const roomModal = document.querySelector('.fixed.inset-0.bg-black\\/50');
+    return !!(amenitiesModal || roomModal);
+  };
+
   useEffect(() => {
     const toggleVisibility = () => {
+      // Ha bármelyik modal nyitva van, ne jelenjen meg a gomb
+      if (isModalOpen()) {
+        setIsVisible(false);
+        return;
+      }
+      
+      // Egyébként a szokásos görgetési logika
       if (window.pageYOffset > 300) {
         setIsVisible(true);
       } else {
@@ -14,10 +28,22 @@ const ScrollToTop = () => {
     };
 
     window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    // Hozzáadunk egy MutationObserver-t, hogy figyelje a DOM változásait (modal megjelenését/eltűnését)
+    const observer = new MutationObserver(toggleVisibility);
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      window.removeEventListener('scroll', toggleVisibility);
+      observer.disconnect();
+    };
   }, []);
 
   const scrollToTop = () => {
+    // Ellenőrizzük, hogy van-e nyitott modal
+    if (isModalOpen()) {
+      return; // Ha van modal, nem görgetünk
+    }
+    
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
