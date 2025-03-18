@@ -11,7 +11,7 @@ import "../i18n/i18n";
 
 export const metadata: Metadata = {
   title: "Villa Laki",
-  description: "Luxury accommodation in Rab, Croatia",
+  description: "Luxury accommodation in Rab, Croatia"
 };
 
 export default function RootLayout({
@@ -26,6 +26,8 @@ export default function RootLayout({
           name="viewport" 
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" 
         />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
         <AnimationWrapper>
