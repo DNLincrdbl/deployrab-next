@@ -22,28 +22,9 @@ const rooms: Room[] = [
     size: "32",
     capacity: "2",
     images: [
-      '/Room2/Lakatos_Banjol-070.jpg',
-      '/Room2/Lakatos_Banjol-071.jpg',
-      '/Room2/Lakatos_Banjol-072.jpg',
-      '/Room2/Lakatos_Banjol-073.jpg',
-      '/Room2/Lakatos_Banjol-074.jpg',
-      '/Room2/Lakatos_Banjol-075.jpg',
-      '/Room2/Lakatos_Banjol-076.jpg',
-      '/Room2/Lakatos_Banjol-077.jpg',
-      '/Room2/Lakatos_Banjol-078.jpg',
-      '/Room2/Lakatos_Banjol-079.jpg',
-      '/Room2/Lakatos_Banjol-080.jpg',
-      '/Room2/Lakatos_Banjol-081.jpg'
-    ],
-    amenities: ['king_size', 'ac', 'wifi', 'tv', 'minibar', 'safe']
-  },
-  {
-    id: 2,
-    type: "room2",
-    price: "65000",
-    size: "55",
-    capacity: "4",
-    images: [
+      '/Room1/Lakatos_Banjol-031.jpg',
+      '/terasz1.jpg',
+      '/Room1/Lakatos_Banjol-032.jpg',
       '/Room1/Lakatos_Banjol-033.jpg',
       '/Room1/Lakatos_Banjol-034.jpg',
       '/Room1/Lakatos_Banjol-035.jpg',
@@ -68,17 +49,29 @@ const rooms: Room[] = [
       '/Room1/Lakatos_Banjol-054.jpg',
       '/Room1/Lakatos_Banjol-055.jpg',
       '/Room1/Lakatos_Banjol-056.jpg',
-      '/Room1/Lakatos_Banjol-057.jpg',
-      '/Room1/Lakatos_Banjol-058.jpg',
-      '/Room1/Lakatos_Banjol-059.jpg',
-      '/Room1/Lakatos_Banjol-060.jpg',
-      '/Room1/Lakatos_Banjol-061.jpg',
-      '/Room1/Lakatos_Banjol-062.jpg',
-      '/Room1/Lakatos_Banjol-063.jpg',
-      '/Room1/Lakatos_Banjol-064.jpg',
-      '/Room1/Lakatos_Banjol-065.jpg'
     ],
-    amenities: ['bedrooms_2', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine', 'balcony']
+    amenities: ['king_size', 'ac', 'wifi', 'tv', 'minibar', 'safe', 'terrace']
+  },
+  {
+    id: 2,
+    type: "room2",
+    price: "65000",
+    size: "55",
+    capacity: "4",
+    images: [
+      '/Room2/Lakatos_Banjol-070.jpg',
+      '/terasz1.jpg',
+      '/Room2/Lakatos_Banjol-071.jpg',
+      '/Room2/Lakatos_Banjol-072.jpg',
+      '/Room2/Lakatos_Banjol-073.jpg',
+      '/Room2/Lakatos_Banjol-074.jpg',
+      '/Room2/Lakatos_Banjol-075.jpg',
+      '/Room2/Lakatos_Banjol-076.jpg',
+      '/Room2/Lakatos_Banjol-077.jpg',
+      '/Room2/Lakatos_Banjol-078.jpg',
+      '/Room2/Lakatos_Banjol-079.jpg',
+    ],
+    amenities: ['bedrooms_2', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine', 'terrace']
   },
   {
     id: 3,
@@ -100,7 +93,7 @@ const rooms: Room[] = [
       '/Room3/Lakatos_Banjol-125.jpg',
       '/Room3/Lakatos_Banjol-126.jpg',
     ],
-    amenities: ['sea_view', 'queen_size', 'ac', 'wifi', 'mini_kitchen', 'tv']
+    amenities: ['queen_size', 'ac', 'wifi', 'mini_kitchen', 'tv']
   },
   {
     id: 4,
@@ -109,22 +102,22 @@ const rooms: Room[] = [
     size: "75",
     capacity: "6",
     images: [
-      '/Room6/Lakatos_Banjol-101.jpg',
-      '/Room6/Lakatos_Banjol-102.jpg',
-      '/Room6/Lakatos_Banjol-103.jpg',
-      '/Room6/Lakatos_Banjol-104.jpg',
-      '/Room6/Lakatos_Banjol-105.jpg',
-      '/Room6/Lakatos_Banjol-106.jpg',
-      '/Room6/Lakatos_Banjol-107.jpg',
-      '/Room6/Lakatos_Banjol-108.jpg',
-      '/Room6/Lakatos_Banjol-109.jpg',
-      '/Room6/Lakatos_Banjol-110.jpg',
-      '/Room6/Lakatos_Banjol-111.jpg',
-      '/Room6/Lakatos_Banjol-112.jpg',
-      '/Room6/Lakatos_Banjol-113.jpg',
-      '/Room6/Lakatos_Banjol-114.jpg'
+      '/Room4/Lakatos_Banjol-101.jpg',
+      '/Room4/Lakatos_Banjol-102.jpg',
+      '/Room4/Lakatos_Banjol-103.jpg',
+      '/Room4/Lakatos_Banjol-104.jpg',
+      '/Room4/Lakatos_Banjol-105.jpg',
+      '/Room4/Lakatos_Banjol-106.jpg',
+      '/Room4/Lakatos_Banjol-107.jpg',
+      '/Room4/Lakatos_Banjol-108.jpg',
+      '/Room4/Lakatos_Banjol-109.jpg',
+      '/Room4/Lakatos_Banjol-110.jpg',
+      '/Room4/Lakatos_Banjol-111.jpg',
+      '/Room4/Lakatos_Banjol-112.jpg',
+      '/Room4/Lakatos_Banjol-113.jpg',
+      '/Room4/Lakatos_Banjol-114.jpg'
     ],
-    amenities: ['bedrooms_3', 'bathrooms_2', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine', 'balcony']
+    amenities: ['bedrooms_3', 'bathrooms_2', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine', 'balcony', 'sea_view']
   },
   {
     id: 5,
@@ -137,7 +130,7 @@ const rooms: Room[] = [
       '/Room5/villalaki5.1.jpg',
       '/Room5/villalaki5.3.jpg'
     ],
-    amenities: ['garden', 'terrace', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine']
+    amenities: ['garden', 'balcony', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine', 'sea_view']
   },
   {
     id: 6,
@@ -146,25 +139,21 @@ const rooms: Room[] = [
     size: "80",
     capacity: "4",
     images: [
-      '/Room4/Lakatos_Banjol-083.jpg',
-      '/Room4/Lakatos_Banjol-084.jpg',
-      '/Room4/Lakatos_Banjol-085.jpg',
-      '/Room4/Lakatos_Banjol-086.jpg',
-      '/Room4/Lakatos_Banjol-087.jpg',
-      '/Room4/Lakatos_Banjol-088.jpg',
-      '/Room4/Lakatos_Banjol-089.jpg',
-      '/Room4/Lakatos_Banjol-090.jpg',
-      '/Room4/Lakatos_Banjol-091.jpg',
-      '/Room4/Lakatos_Banjol-092.jpg',
-      '/Room4/Lakatos_Banjol-093.jpg',
-      '/Room4/Lakatos_Banjol-094.jpg',
-      '/Room4/Lakatos_Banjol-095.jpg',
-      '/Room4/Lakatos_Banjol-096.jpg',
-      '/Room4/Lakatos_Banjol-097.jpg',
-      '/Room4/Lakatos_Banjol-098.jpg',
-      '/Room4/Lakatos_Banjol-099.jpg'
+      '/Room6/Lakatos_Banjol-100.jpg',
+      '/Room6/Lakatos_Banjol-088.jpg',
+      '/Room6/Lakatos_Banjol-089.jpg',
+      '/Room6/Lakatos_Banjol-090.jpg',
+      '/Room6/Lakatos_Banjol-091.jpg',
+      '/Room6/Lakatos_Banjol-092.jpg',
+      '/Room6/Lakatos_Banjol-093.jpg',
+      '/Room6/Lakatos_Banjol-094.jpg',
+      '/Room6/Lakatos_Banjol-095.jpg',
+      '/Room6/Lakatos_Banjol-096.jpg',
+      '/Room6/Lakatos_Banjol-097.jpg',
+      '/Room6/Lakatos_Banjol-098.jpg',
+      '/Room6/Lakatos_Banjol-099.jpg'
     ],
-    amenities: ['terrace', 'jacuzzi', 'bedrooms_2', 'luxury_bath', 'kitchen', 'ac', 'wifi', 'tv']
+    amenities: ['jacuzzi', 'bedrooms_2', 'luxury_bath', 'kitchen', 'ac', 'wifi', 'tv']
   },
   {
     id: 7,
@@ -209,7 +198,7 @@ const rooms: Room[] = [
       '/Room8/Lakatos_Banjol-148.jpg',
       '/Room8/Lakatos_Banjol-149.jpg'
     ],
-    amenities: ['king_size', 'luxury_bath', 'balcony', 'ac', 'wifi', 'tv', 'minibar']
+    amenities: ['king_size', 'luxury_bath', 'balcony', 'ac', 'wifi', 'tv', 'minibar', 'sea_view']
   },
   {
     id: 9,
@@ -233,7 +222,7 @@ const rooms: Room[] = [
       '/Room9/Lakatos_Banjol-161.jpg',
       '/Room9/Lakatos_Banjol-162.jpg'
     ],
-    amenities: ['queen_size', 'workspace', 'lounge', 'ac', 'wifi', 'tv', 'coffee_maker']
+    amenities: ['queen_size', 'workspace', 'lounge', 'ac', 'wifi', 'tv', 'coffee_maker', 'balcony', 'sea_view']
   },
   {
     id: 10,
@@ -260,7 +249,7 @@ const rooms: Room[] = [
       '/Room10/Lakatos_Banjol-178.jpg',
       '/Room10/Lakatos_Banjol-179.jpg'
     ],
-    amenities: ['duplex', 'bathrooms_2', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine', 'balcony']
+    amenities: ['duplex', 'bathrooms_2', 'kitchen', 'ac', 'wifi', 'tv', 'washing_machine']
   },
   {
     id: 11,
@@ -369,17 +358,18 @@ const RoomCard = ({ room, onClick }: { room: Room; onClick: () => void }) => {
         
         {/* Amenities with Improved Layout */}
         <div className="flex flex-wrap items-center gap-3 mb-auto">
-          {room.type !== 'outdoor' && (
-            <div className="flex items-center gap-2 bg-blue-50 px-3 py-1.5 rounded-full text-blue-700">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                  d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" 
-                />
-              </svg>
-              <span className="text-sm font-medium">{room.capacity} {t('rooms_section.capacity_unit')}</span>
-            </div>
-          )}
           <div className="flex flex-wrap items-center gap-2">
+            {room.amenities.includes('terrace') && (
+              <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors duration-200" 
+                   title={t('rooms_section.amenities.terrace')}>
+                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" 
+                  />
+                </svg>
+                <span className="text-sm text-gray-700">{t('rooms_section.amenities.terrace')}</span>
+              </div>
+            )}
             {room.amenities.includes('balcony') && (
               <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors duration-200" 
                    title={t('rooms_section.amenities.balcony')}>
