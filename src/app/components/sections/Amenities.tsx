@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useTranslation } from 'next-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -119,7 +119,7 @@ const AmenitiesSection = () => {
   ] as const;
 
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section id="amenities" className="relative py-20">
       <div className="container mx-auto px-4">
         <motion.div 
           className="text-center mb-16"

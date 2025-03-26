@@ -1,41 +1,37 @@
 'use client';
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 import { useTranslation } from 'next-i18next';
 import Plyr from 'plyr';
+import 'plyr/dist/plyr.css';
 import { motion } from 'framer-motion';
 
 const About = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
   const { t } = useTranslation('common');
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        }
-      },
-      { threshold: 0.1 }
-    );
+    const video = videoRef.current;
+    if (!video) return;
 
-    const currentElement = document.getElementById('about-section');
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    const player = new Plyr(video, {
+      controls: [
+        'play-large',
+        'play',
+        'progress',
+        'current-time',
+        'mute',
+        'volume',
+        'fullscreen'
+      ],
+      autopause: true,
+      resetOnEnd: true
+    });
 
-    return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
+    // Load the first frame as preview
+    video.addEventListener('loadeddata', () => {
+      if (video.readyState >= 2) {
+        video.currentTime = 0.1;
       }
-    };
-  }, []);
-
-  useEffect(() => {
-    if (!videoRef.current) return;
-
-    const player = new Plyr('#video-player', {
-      controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
     });
 
     return () => {

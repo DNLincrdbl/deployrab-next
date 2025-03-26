@@ -1,10 +1,9 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const CookieConsent = () => {
-  const { t } = useTranslation();
   const [showConsent, setShowConsent] = useState(false);
   const [showPreferences, setShowPreferences] = useState(false);
   const [preferences, setPreferences] = useState({
@@ -13,6 +12,8 @@ const CookieConsent = () => {
     marketing: false,
     personalization: false
   });
+  const [accepted, setAccepted] = useState(false);
+  const { t } = useTranslation();
 
   useEffect(() => {
     try {
@@ -63,6 +64,13 @@ const CookieConsent = () => {
     }
   }, []);
 
+  useEffect(() => {
+    const cookieAccepted = localStorage.getItem('cookieConsent');
+    if (cookieAccepted) {
+      setAccepted(true);
+    }
+  }, []);
+
   const handleAcceptAll = () => {
     const newPreferences = {
       necessary: true,
@@ -92,6 +100,13 @@ const CookieConsent = () => {
     setPreferences(newPreferences);
     setShowConsent(false);
   };
+
+  const handleAccept = () => {
+    localStorage.setItem('cookieConsent', 'true');
+    setAccepted(true);
+  };
+
+  if (accepted) return null;
 
   return (
     <AnimatePresence>

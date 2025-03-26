@@ -3,9 +3,17 @@ import { motion } from "framer-motion";
 import Image from 'next/image';
 import { useTranslation } from "react-i18next";
 import Weather from './Weather';
+import { ChevronDownIcon } from '@heroicons/react/24/outline';
 
 export default function Hero() {
   const { t } = useTranslation();
+
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById('about');
+    if (nextSection) {
+      nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section id="hero" className="relative flex items-center justify-center min-h-screen overflow-hidden">
@@ -142,22 +150,21 @@ export default function Hero() {
             </motion.div>
           </motion.div>
         </div>
-      </div>
 
-      {/* Scroll Indicator */}
-      <motion.div 
-        className="absolute bottom-8 left-[45%] -translate-x-1/2 z-[7] w-full flex justify-start"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 1.2 }}
-      >
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-white/60 text-sm">{t('hero.scroll_down')}</span>
-          <div className="w-6 h-10 border-2 border-white/20 rounded-full p-1">
-            <div className="w-1.5 h-1.5 bg-white/60 rounded-full animate-bounce mx-auto" />
+        {/* Scroll Indicator */}
+        <motion.div 
+          className="absolute left-[38%] sm:left-[46%] bottom-[-150px] sm:bottom-[-140px] z-[7]"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 1.2 }}
+          onClick={scrollToNextSection}
+        >
+          <div className="flex flex-col items-center gap-2 cursor-pointer">
+            <span className="text-white/60 text-sm">{t('hero.scroll_down')}</span>
+            <ChevronDownIcon className="w-6 h-6 text-white/60 animate-bounce" />
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      </div>
     </section>
   );
 }

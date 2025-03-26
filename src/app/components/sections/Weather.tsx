@@ -7,7 +7,6 @@ interface WeatherData {
   feels_like: number;
   humidity: number;
   description: string;
-  icon: string;
 }
 
 const Weather = () => {
@@ -22,7 +21,7 @@ const Weather = () => {
         const lat = 44.7500;
         const lon = 14.7667;
         const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY;
-        const lang = i18n.language; // 'hu' vagy 'en'
+        const lang = i18n.language;
 
         if (!API_KEY) {
           throw new Error('API kulcs hiányzik');
@@ -43,7 +42,6 @@ const Weather = () => {
           feels_like: Math.round(data.main.feels_like),
           humidity: data.main.humidity,
           description: data.weather[0].description,
-          icon: data.weather[0].icon,
         });
         
         setLoading(false);
@@ -58,11 +56,11 @@ const Weather = () => {
     const interval = setInterval(fetchWeather, 1800000);
     
     return () => clearInterval(interval);
-  }, [i18n.language]); // Újra futtatjuk, ha változik a nyelv
+  }, [i18n.language]);
 
   if (error) {
     return (
-      <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-[280px]">
+      <div className="bg-white/10 backdrop-blur-xl p-4 rounded-2xl shadow-elegant border border-white/10">
         <p className="text-red-500">{t('weather.error')}</p>
       </div>
     );
@@ -70,40 +68,51 @@ const Weather = () => {
 
   if (loading) {
     return (
-      <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-[280px]">
+      <div className="bg-white/10 backdrop-blur-xl p-4 rounded-2xl shadow-elegant border border-white/10">
         <div className="flex justify-center items-center h-32">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-[#007AFF]"></div>
+          <div className="w-6 h-6 border-2 border-white/60 rounded-full animate-spin border-t-transparent"></div>
         </div>
       </div>
     );
   }
 
   return (
-    <div className="bg-white/90 backdrop-blur-md rounded-2xl shadow-xl p-6 max-w-[280px] transform hover:scale-105 transition-all duration-300">
-      <h3 className="text-lg font-semibold mb-4 text-center text-gray-800">
-        {t('weather.title')}
-      </h3>
+    <div className="bg-white/10 backdrop-blur-xl p-4 rounded-2xl shadow-elegant border border-white/10">
       {weather && (
-        <div className="flex flex-col items-center">
-          <div className="relative">
-            <img 
-              src={`https://openweathermap.org/img/wn/${weather.icon}@2x.png`}
-              alt={weather.description}
-              width={80}
-              height={80}
-              className="filter drop-shadow-md"
-            />
-          </div>
-          <p className="text-4xl font-bold mb-2 text-gray-900">{weather.temp}°C</p>
-          <p className="text-gray-600 capitalize mb-3 text-center">{weather.description}</p>
-          <div className="w-full space-y-2">
-            <div className="flex items-center justify-between text-sm text-gray-500">
-              <span>{t('weather.feels_like')}:</span>
-              <span className="font-medium">{weather.feels_like}°C</span>
+        <div className="flex flex-col gap-3">
+          <div className="flex items-center gap-3">
+            <div>
+              <div className="text-2xl font-bold text-white">
+                {weather.temp}°C
+              </div>
+              <div className="text-sm text-white/80 capitalize">
+                {weather.description}
+              </div>
             </div>
-            <div className="flex items-center justify-between text-sm text-gray-500">
-              <span>{t('weather.humidity')}:</span>
-              <span className="font-medium">{weather.humidity}%</span>
+          </div>
+          
+          <div className="grid grid-cols-2 gap-2 pt-2 border-t border-white/10">
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                </svg>
+              </div>
+              <div>
+                <div className="text-xs text-white/60">{t('weather.humidity')}</div>
+                <div className="text-sm font-medium text-white">{weather.humidity}%</div>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 rounded-lg bg-white/5 flex items-center justify-center">
+                <svg className="w-4 h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 13C16 13 14.5 15 12 15C9.5 15 8 13 8 13" />
+                </svg>
+              </div>
+              <div>
+                <div className="text-xs text-white/60">{t('weather.feels_like')}</div>
+                <div className="text-sm font-medium text-white">{weather.feels_like}°C</div>
+              </div>
             </div>
           </div>
         </div>
