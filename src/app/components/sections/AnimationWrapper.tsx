@@ -3,11 +3,15 @@ import { useState, useEffect } from 'react';
 import WelcomeAnimation from '../sections/WelcomeAnimation';
 import Navbar from '../navigation/Navbar';
 
+interface AnimationWrapperProps {
+  children: React.ReactNode;
+  className?: string;
+}
+
 export default function AnimationWrapper({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+  className = '',
+}: AnimationWrapperProps) {
   const [isAnimationComplete, setIsAnimationComplete] = useState(false);
   const [isContentVisible, setIsContentVisible] = useState(false);
 
@@ -31,7 +35,7 @@ export default function AnimationWrapper({
   return (
     <>
       <WelcomeAnimation />
-      <div className={`transition-opacity duration-300 ${isContentVisible ? 'opacity-100' : 'opacity-0'}`}>
+      <div className={`transition-opacity duration-300 ${isContentVisible ? 'opacity-100' : 'opacity-0'} ${className}`}>
         {isAnimationComplete && (
           <>
             <Navbar />

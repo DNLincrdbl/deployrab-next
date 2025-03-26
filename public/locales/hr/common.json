@@ -257,8 +257,10 @@
             "email": "Email",
             "email_placeholder": "Vaša email adresa",
             "message": "Poruka",
-            "message_placeholder": "Napišite svoju poruku...",
-            "submit": "Pošalji poruku"
+            "message_placeholder": "Napišite vašu poruku...",
+            "submit": "Pošalji poruku",
+            "success_message": "Hvala vam na poruci! Javit ćemo vam se uskoro.",
+            "error_message": "Žao nam je, došlo je do pogreške prilikom slanja poruke. Molimo pokušajte ponovno kasnije."
         },
         "info": {
             "address": {

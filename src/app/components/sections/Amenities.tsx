@@ -16,84 +16,61 @@ interface ModalProps {
 }
 
 const Modal = ({ isOpen, onClose, category }: ModalProps) => {
-  useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'unset';
-    }
-    return () => {
-      document.body.style.overflow = 'unset';
-    };
-  }, [isOpen]);
+  const { t } = useTranslation('common');
+
+  if (!category) return null;
 
   return (
     <AnimatePresence>
       {isOpen && (
-        <>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          onClick={onClose}
+          className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        >
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            onClick={onClose}
-            className="fixed inset-0 bg-black/40 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            initial={{ scale: 0.95, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.95, opacity: 0 }}
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-3xl p-6 md:p-8 w-full max-w-lg shadow-2xl"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", duration: 0.5 }}
-              className="w-[95%] max-w-lg bg-white rounded-2xl shadow-xl overflow-hidden max-h-[90vh] [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none]"
-              onClick={e => e.stopPropagation()}
-            >
-              <div className="p-4 md:p-6 flex flex-col">
-                <div className="flex items-start gap-4 mb-6">
-                  <div className="w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-gray-50 rounded-xl flex-shrink-0">
-                    <span className="text-2xl md:text-3xl">{category?.icon}</span>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 flex-grow pr-8">{category?.title}</h3>
-                  <button
-                    onClick={onClose}
-                    className="text-gray-400 hover:text-gray-600 transition-colors -mt-1"
-                  >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                  </button>
+            <div className="flex items-center justify-between mb-6">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center">
+                  <span className="text-2xl">{category.icon}</span>
                 </div>
-
-                <div className="overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:'none'] [scrollbar-width:none]" style={{ maxHeight: 'calc(90vh - 120px)' }}>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    {(category?.items as string[]).map((item, index) => (
-                      <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.05 }}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 transition-colors"
-                      >
-                        <svg 
-                          className="w-5 h-5 text-primary flex-shrink-0" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                        >
-                          <path 
-                            strokeLinecap="round" 
-                            strokeLinejoin="round" 
-                            strokeWidth="2" 
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="text-gray-700 text-sm md:text-base">{item}</span>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
               </div>
-            </motion.div>
+              <button
+                onClick={onClose}
+                className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
+              >
+                <svg className="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+            <div className="grid grid-cols-1 gap-3">
+              {category.items.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shadow-sm">
+                    <span className="text-lg">{category.icon}</span>
+                  </div>
+                  <span className="text-gray-700">{item}</span>
+                </motion.div>
+              ))}
+            </div>
           </motion.div>
-        </>
+        </motion.div>
       )}
     </AnimatePresence>
   );
@@ -142,17 +119,33 @@ const AmenitiesSection = () => {
   ] as const;
 
   return (
-    <section className="py-12 md:py-20 bg-gray-50">
+    <section className="relative py-24 overflow-hidden">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-3 md:mb-4">
-          {t('amenities_section.title')}
-        </h2>
-        <p className="text-lg md:text-xl text-gray-600 text-center mb-12 md:mb-16">
-          {t('amenities_section.subtitle')}
-        </p>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7 }}
+        >
+          <h2 className="text-5xl font-bold mb-6">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
+              {t('amenities_section.title')}
+            </span>
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            {t('amenities_section.subtitle')}
+          </p>
+        </motion.div>
 
         {/* Top amenities highlight */}
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4 mb-12 md:mb-16">
+        <motion.div 
+          className="flex flex-wrap justify-center gap-4 mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
           {[
             { icon: "🅿️", text: t('amenities_section.top_amenities.free_parking') },
             { icon: "📶", text: t('amenities_section.top_amenities.free_wifi') },
@@ -161,35 +154,40 @@ const AmenitiesSection = () => {
             { icon: "🍷", text: t('amenities_section.top_amenities.bar') },
             { icon: "🏖️", text: t('amenities_section.top_amenities.private_beach') },
           ].map((item, index) => (
-            <div 
-              key={index} 
-              className="flex items-center gap-2 bg-white shadow-sm hover:shadow-md transition-shadow 
-                         px-4 md:px-6 py-2 md:py-3 rounded-xl border border-gray-100"
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="glass-panel flex items-center gap-3 px-6 py-4 hover:shadow-hover transition-all duration-300"
             >
-              <span className="text-xl md:text-2xl">{item.icon}</span>
-              <span className="text-sm md:text-base text-gray-900 font-medium">{item.text}</span>
-            </div>
+              <span className="text-2xl">{item.icon}</span>
+              <span className="text-gray-900 font-medium">{item.text}</span>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         {/* Amenity categories as mosaic */}
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-2 md:gap-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
             {amenityCategories.map((category, index) => (
               <motion.button
                 key={index}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
                 onClick={() => setSelectedCategory(category)}
-                className="aspect-square bg-white rounded-lg md:rounded-xl shadow-sm hover:shadow-md 
-                           transition-all p-2 md:p-4 flex flex-col items-center justify-center gap-2
-                           cursor-pointer group border border-gray-100"
+                className="glass-panel aspect-square p-6 flex flex-col items-center justify-center gap-4 group cursor-pointer"
               >
-                <div className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center 
-                              bg-gray-50 rounded-md md:rounded-lg group-hover:bg-gray-100 transition-colors">
-                  <span className="text-lg sm:text-xl md:text-2xl lg:text-3xl">{category.icon}</span>
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500/10 to-secondary-500/10 
+                              flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <span className="text-3xl">{category.icon}</span>
                 </div>
-                <h3 className="text-xs sm:text-sm md:text-base font-medium text-gray-900 text-center line-clamp-2">
+                <h3 className="text-lg font-semibold text-gray-900 text-center group-hover:text-primary-500 transition-colors">
                   {category.title}
                 </h3>
               </motion.button>
@@ -198,33 +196,49 @@ const AmenitiesSection = () => {
         </div>
 
         {/* Additional info boxes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-12 md:mt-16 max-w-4xl mx-auto">
+        <motion.div 
+          className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-16 max-w-4xl mx-auto"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+        >
           {[
             {
               title: t('amenities_section.internet_title'),
-              description: t('amenities_section.internet_description')
+              description: t('amenities_section.internet_description'),
+              icon: "📶"
             },
             {
               title: t('amenities_section.parking_title'),
-              description: t('amenities_section.parking_description')
+              description: t('amenities_section.parking_description'),
+              icon: "🅿️"
             }
           ].map((info, index) => (
-            <div key={index} 
-                 className="bg-white rounded-xl p-6 md:p-8 shadow-sm hover:shadow-md transition-shadow
-                          border border-gray-100">
-              <h3 className="text-lg md:text-xl font-bold text-gray-900 mb-3 md:mb-4">{info.title}</h3>
-              <p className="text-sm md:text-base text-gray-700">{info.description}</p>
-            </div>
+            <motion.div 
+              key={index}
+              whileHover={{ scale: 1.02 }}
+              className="glass-panel p-8 hover:shadow-hover transition-all duration-300"
+            >
+              <div className="flex items-center gap-4 mb-4">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary-500/10 to-secondary-500/10 
+                              flex items-center justify-center">
+                  <span className="text-2xl">{info.icon}</span>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">{info.title}</h3>
+              </div>
+              <p className="text-gray-600 leading-relaxed">{info.description}</p>
+            </motion.div>
           ))}
-        </div>
-
-        {/* Modal */}
-        <Modal
-          isOpen={selectedCategory !== null}
-          onClose={() => setSelectedCategory(null)}
-          category={selectedCategory}
-        />
+        </motion.div>
       </div>
+
+      {/* Modal */}
+      <Modal
+        isOpen={selectedCategory !== null}
+        onClose={() => setSelectedCategory(null)}
+        category={selectedCategory}
+      />
     </section>
   );
 };

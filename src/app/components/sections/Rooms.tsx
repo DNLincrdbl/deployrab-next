@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import RoomModal from './RoomModal';
 import Image from 'next/image';
 import { useTranslation } from 'next-i18next';
+import { motion } from 'framer-motion';
 
 interface Room {
   id: number;
@@ -292,39 +293,68 @@ export default function Rooms() {
   const { t } = useTranslation('common');
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="rooms" className="relative py-24 overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-white to-gray-50" />
+      <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-primary-500/5 rounded-full filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-secondary-500/5 rounded-full filter blur-3xl opacity-50 translate-x-1/3 translate-y-1/3" />
+      <div className="absolute top-1/2 left-1/2 w-[500px] h-[500px] bg-accent-500/5 rounded-full filter blur-3xl opacity-50 -translate-x-1/2 -translate-y-1/2" />
+
+      <div className="container relative mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">{t('rooms_section.title')}</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            {t('rooms_section.description')}
-          </p>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+          >
+            <h2 className="text-5xl font-bold mb-6">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-primary-500 to-secondary-500">
+                {t('rooms_section.title')}
+              </span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              {t('rooms_section.description')}
+            </p>
+          </motion.div>
         </div>
 
         {/* First Three Rows - 3 rooms each */}
         {[0, 3, 6].map((startIndex) => (
-          <div key={startIndex} className="flex justify-center w-full mb-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 w-full max-w-[1248px]">
+          <motion.div 
+            key={startIndex} 
+            className="flex justify-center w-full mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: startIndex * 0.1 }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 w-full max-w-[1248px]">
               {rooms.slice(startIndex, startIndex + 3).map((room) => (
                 <RoomCard key={room.id} room={room} onClick={() => setSelectedRoom(room)} />
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
 
         {/* Last Row - 2 rooms, centered */}
-        <div className="flex justify-center w-full">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 lg:gap-8 w-full max-w-[832px]">
+        <motion.div 
+          className="flex justify-center w-full"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.9 }}
+        >
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 w-full max-w-[832px]">
             {rooms.slice(9, 11).map((room) => (
               <RoomCard key={room.id} room={room} onClick={() => setSelectedRoom(room)} />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
 
-      {selectedRoom && (
-        <RoomModal room={selectedRoom} onClose={() => setSelectedRoom(null)} />
-      )}
+      {/* Room Modal */}
+      {selectedRoom && <RoomModal room={selectedRoom} onClose={() => setSelectedRoom(null)} />}
     </section>
   );
 }
@@ -335,75 +365,74 @@ const RoomCard = ({ room, onClick }: { room: Room; onClick: () => void }) => {
   
   return (
     <div
-      className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer h-[460px] flex flex-col border border-gray-100"
+      className="group relative bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-hover transition-all duration-500 cursor-pointer w-full flex flex-col"
       onClick={onClick}
     >
-      {/* Image Container with Gradient Overlay */}
-      <div className="h-[280px] overflow-hidden relative">
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent z-10 group-hover:opacity-0 transition-opacity duration-300" />
-        <Image 
-          src={room.images[0]} 
-          alt={t(`rooms_section.room_types.${room.type}.title`)} 
-          width={400} 
-          height={300} 
-          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300 ease-out"
-        />
-      </div>
-
-      <div className="p-6 flex-1 flex flex-col relative">
-        {/* Title with Modern Typography */}
-        <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-primary transition-colors duration-300">
-          {t(`rooms_section.room_types.${room.type}.title`)}
-        </h3>
-        
-        {/* Amenities with Improved Layout */}
-        <div className="flex flex-wrap items-center gap-3 mb-auto">
-          <div className="flex flex-wrap items-center gap-2">
-            {room.amenities.includes('terrace') && (
-              <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors duration-200" 
-                   title={t('rooms_section.amenities.terrace')}>
-                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" 
-                  />
-                </svg>
-                <span className="text-sm text-gray-700">{t('rooms_section.amenities.terrace')}</span>
-              </div>
-            )}
-            {room.amenities.includes('balcony') && (
-              <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors duration-200" 
-                   title={t('rooms_section.amenities.balcony')}>
-                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" 
-                  />
-                </svg>
-                <span className="text-sm text-gray-700">{t('rooms_section.amenities.balcony')}</span>
-              </div>
-            )}
-            {room.amenities.includes('sea_view') && (
-              <div className="flex items-center gap-2 bg-gray-50 px-3 py-1.5 rounded-full hover:bg-gray-100 transition-colors duration-200" 
-                   title={t('rooms_section.amenities.sea_view')}>
-                <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
-                    d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" 
-                  />
-                </svg>
-                <span className="text-sm text-gray-700">{t('rooms_section.amenities.sea_view')}</span>
-              </div>
-            )}
+      {/* Decorative gradient border */}
+      <div className="absolute -inset-[1px] bg-gradient-to-r from-primary-500/20 to-secondary-500/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-sm" />
+      
+      {/* Content container */}
+      <div className="relative flex flex-col h-[520px] bg-white rounded-3xl overflow-hidden">
+        {/* Image Container with Enhanced Gradient Overlay */}
+        <div className="relative w-full overflow-hidden" style={{ height: '320px' }}>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent z-10 group-hover:opacity-0 transition-opacity duration-500" />
+          <div className="absolute top-0 left-0 right-0 bottom-0">
+            <Image 
+              src={room.images[0]} 
+              alt={t(`rooms_section.room_types.${room.type}.title`)} 
+              fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              className="object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+              style={{ objectPosition: 'center top' }}
+            />
           </div>
         </div>
 
-        {/* Modern Details Button */}
-        <div className="mt-6 flex justify-between items-center relative">
-          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
-          <span className="text-primary font-medium group-hover:translate-x-2 transition-transform duration-300 ease-out flex items-center gap-2">
-            {t('rooms_section.details')}
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-            </svg>
-          </span>
+        <div className="p-6 flex-1 flex flex-col relative">
+          {/* Room Info */}
+          <div className="h-[88px]">
+            <h3 className="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary-500 transition-colors duration-300">
+              {t(`rooms_section.room_types.${room.type}.title`)}
+            </h3>
+            <p className="text-gray-600 text-sm line-clamp-2">
+              {t(`rooms_section.room_types.${room.type}.description`)}
+            </p>
+          </div>
+
+          {/* Room Details */}
+          <div className="flex items-center gap-4 mb-6">
+            {room.type !== 'outdoor' && room.size && (
+              <div className="flex items-center gap-2 text-gray-600">
+                <div className="w-8 h-8 rounded-lg bg-primary-50 flex items-center justify-center">
+                  <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                  </svg>
+                </div>
+                <span>{t('rooms_section.size', { size: room.size })}</span>
+              </div>
+            )}
+            <div className="flex items-center gap-2 text-gray-600">
+              <div className="w-8 h-8 rounded-lg bg-secondary-50 flex items-center justify-center">
+                <svg className="w-4 h-4 text-secondary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <span>{t('rooms_section.capacity', { capacity: room.capacity })}</span>
+            </div>
+          </div>
+
+          {/* Modern Details Button */}
+          <div className="mt-auto">
+            <button className="group/btn relative w-full overflow-hidden px-6 py-3 rounded-xl bg-gradient-to-r from-primary-500 to-secondary-500 text-white font-medium">
+              <span className="relative z-10 flex items-center justify-center gap-2 group-hover/btn:translate-x-1 transition-transform duration-300">
+                {t('rooms_section.details')}
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-secondary-500 to-primary-500 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
+            </button>
+          </div>
         </div>
       </div>
     </div>
