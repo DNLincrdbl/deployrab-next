@@ -69,43 +69,43 @@
         "room_types": {
             "room1": {
                 "title": "Soba 1",
-                "description": "Elegantna, moderna soba za dvije osobe"
+                "description": "Elegantan, moderni apartman s pogledom na more za 2+2 osobe"
             },
             "room2": {
                 "title": "Soba 2",
-                "description": "Prostran apartman s dvije spavaće sobe za obitelji"
+                "description": "Prostran apartman s dvije spavaće sobe i pogledom na more za 4 osobe"
             },
             "room3": {
                 "title": "Soba 3",
-                "description": "Moderni studio apartman s prekrasnim pogledom na Jadransko more"
+                "description": "Moderni studio apartman s pogledom na dvorište"
             },
             "room4": {
                 "title": "Soba 4",
-                "description": "Apartman s tri spavaće sobe i dvije kupaonice za veće obitelji"
+                "description": "Studio apartman s pogledom na more za 2+2 osobe"
             },
             "room5": {
                 "title": "Soba 5",
-                "description": "Prizemni apartman s pristupom vrtu"
+                "description": "Studio apartman s pogledom na more za 2+2 osobe"
             },
             "room6": {
                 "title": "Soba 6",
-                "description": "Ekskluzivni penthouse apartman s panoramskim pogledom i jacuzzijem"
+                "description": "Studio apartman s pogledom na vrt za 2+1 osobe"
             },
             "room7": {
                 "title": "Soba 7",
-                "description": "Praktično uređena soba po pristupačnoj cijeni"
+                "description": "Studio apartman s pogledom na more i vrt za 2 osobe"
             },
             "room8": {
                 "title": "Soba 8",
-                "description": "Romantični apartman s privatnim balkonom"
+                "description": "Studio apartman s pogledom na more za 2+1 osobe"
             },
             "room9": {
                 "title": "Soba 9",
-                "description": "Moderna soba s dodatnim sadržajima za udobnost"
+                "description": "Studio apartman s pogledom na more za 2+1 osobe"
             },
             "room10": {
                 "title": "Soba 10",
-                "description": "Elegantni dvoetažni apartman s galerijom"
+                "description": "Studio apartman s pogledom na vrt"
             },
             "outdoor": {
                 "title": "Vanjski prostor",
@@ -132,7 +132,7 @@
         "subtitle": "Najpopularnije usluge",
         "categories": {
             "stay": {
-                "title": "Savršeno za Vaš boravak",
+                "title": "Općenito",
                 "items": [
                     "Privatna kupaonica",
                     "Besplatni parking",

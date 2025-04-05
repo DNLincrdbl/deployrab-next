@@ -15,8 +15,8 @@ i18n
     debug: false,
     fallbackLng: "hu",
     supportedLngs: ["hu", "en", "hr"],
-    interpolation: { escapeValue: false, },
-    backend: { loadPath: isServer ? "" : "/locales/{{lng}}/common.json", },
+    interpolation: { escapeValue: false },
+    backend: { loadPath: isServer ? "" : "/locales/{{lng}}/common.json" },
     detection: {
       order: ["querystring", "cookie", "localStorage", "navigator", "htmlTag"],
       caches: ["cookie"],

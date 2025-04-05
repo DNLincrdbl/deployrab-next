@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface AmenityCategory {
   title: string;
-  icon: string;
+  modalTitle: string;
   items: string[];
 }
 
@@ -40,9 +40,9 @@ const Modal = ({ isOpen, onClose, category }: ModalProps) => {
             <div className="flex items-center justify-between mb-6">
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-xl bg-primary-50 flex items-center justify-center">
-                  <span className="text-2xl">{category.icon}</span>
+                  <span className="text-2xl">{category.modalTitle.split(' ')[0]}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900">{category.title}</h3>
+                <h3 className="text-2xl font-bold text-gray-900">{category.modalTitle.split(' ')[1]}</h3>
               </div>
               <button
                 onClick={onClose}
@@ -62,9 +62,9 @@ const Modal = ({ isOpen, onClose, category }: ModalProps) => {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-center gap-3 p-3 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors"
                 >
-                  <div className="w-8 h-8 rounded-lg bg-white flex items-center justify-center shadow-sm">
-                    <span className="text-lg">{category.icon}</span>
-                  </div>
+                  <svg className="w-5 h-5 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
                   <span className="text-gray-700">{item}</span>
                 </motion.div>
               ))}
@@ -83,37 +83,37 @@ const AmenitiesSection = () => {
   const amenityCategories = [
     {
       title: t('amenities_section.categories.stay.title'),
-      icon: "🏠",
+      modalTitle: "🏠 " + t('amenities_section.categories.stay.title'),
       items: t('amenities_section.categories.stay.items', { returnObjects: true }) as string[]
     },
     {
       title: t('amenities_section.categories.outdoor.title'),
-      icon: "🌳",
+      modalTitle: "🌳 " + t('amenities_section.categories.outdoor.title'),
       items: t('amenities_section.categories.outdoor.items', { returnObjects: true }) as string[]
     },
     {
       title: t('amenities_section.categories.kitchen.title'),
-      icon: "🍳",
+      modalTitle: "🍳 " + t('amenities_section.categories.kitchen.title'),
       items: t('amenities_section.categories.kitchen.items', { returnObjects: true }) as string[]
     },
     {
       title: t('amenities_section.categories.bathroom.title'),
-      icon: "🚿",
+      modalTitle: "🚿 " + t('amenities_section.categories.bathroom.title'),
       items: t('amenities_section.categories.bathroom.items', { returnObjects: true }) as string[]
     },
     {
       title: t('amenities_section.categories.bedroom.title'),
-      icon: "🛏️",
+      modalTitle: "🛏️ " + t('amenities_section.categories.bedroom.title'),
       items: t('amenities_section.categories.bedroom.items', { returnObjects: true }) as string[]
     },
     {
       title: t('amenities_section.categories.view.title'),
-      icon: "👀",
+      modalTitle: "👀 " + t('amenities_section.categories.view.title'),
       items: t('amenities_section.categories.view.items', { returnObjects: true }) as string[]
     },
     {
       title: t('amenities_section.categories.languages.title'),
-      icon: "🗣️",
+      modalTitle: "🗣️ " + t('amenities_section.categories.languages.title'),
       items: t('amenities_section.categories.languages.items', { returnObjects: true }) as string[]
     }
   ] as const;
@@ -185,7 +185,7 @@ const AmenitiesSection = () => {
               >
                 <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-500/10 to-secondary-500/10 
                               flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-3xl">{category.icon}</span>
+                  <span className="text-3xl">{category.modalTitle.split(' ')[0]}</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 text-center group-hover:text-primary-500 transition-colors">
                   {category.title}

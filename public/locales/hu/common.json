@@ -60,43 +60,43 @@
     "room_types": {
       "room1": {
         "title": "Szoba 1",
-        "description": "Elegáns, modern berendezésű szoba két fő részére"
+        "description": "Elegáns, modern berendezésű tengerrenéző apartman 2+2 fő részére"
       },
       "room2": {
         "title": "Szoba 2",
-        "description": "Tágas, két hálószobás apartman családok számára"
+        "description": "Tágas, két hálószobás tengerrenéző apartman 4 fő számára"
       },
       "room3": {
         "title": "Szoba 3",
-        "description": "Modern stúdió apartman lélegzetelállító kilátással az Adriai-tengerre"
+        "description": "Modern studio apartman udvarra néző kilátással"
       },
       "room4": {
         "title": "Szoba 4",
-        "description": "Három hálószobás, két fürdőszobás lakosztály nagyobb családok számára"
+        "description": "Studio apartman tengerre néző kilátással 2+2 fő részére"
       },
       "room5": {
         "title": "Szoba 5",
-        "description": "Földszinti, kertre néző apartman saját terasszal"
+        "description": "Studio apartman tengerre néző kilátással 2+2 fő részére"
       },
       "room6": {
         "title": "Szoba 6",
-        "description": "Exkluzív tetőtéri apartman panorámás kilátással és jakuzzival"
+        "description": "Studio apartman kertre néző kilátással 2+1 fő részére"
       },
       "room7": {
         "title": "Szoba 7",
-        "description": "Praktikus elrendezésű, kedvező árú szoba"
+        "description": "Studio apartman tengerre és kertre néző kilátással 2 fő részére"
       },
       "room8": {
         "title": "Szoba 8",
-        "description": "Romantikus hangulatú lakosztály privát erkéllyel"
+        "description": "Tengerre néző studio apartman 2+1 fő részére"
       },
       "room9": {
         "title": "Szoba 9",
-        "description": "Modern berendezésű szoba extra kényelmi szolgáltatásokkal"
+        "description": "Tengerre néző studio apartman 2+1 fő részére"
       },
       "room10": {
         "title": "Szoba 10",
-        "description": "Elegáns kétszintes apartman galériával"
+        "description": "Studio apartman kertre néző kilátással"
       },
       "outdoor": {
         "title": "Külső terület",
@@ -131,7 +131,7 @@
     "subtitle": "A legnépszerűbb szolgáltatások",
     "categories": {
       "stay": {
-        "title": "Remek az Ön tartózkodásához",
+        "title": "Általános",
         "items": [
           "Saját fürdőszoba",
           "Ingyenes wifi",

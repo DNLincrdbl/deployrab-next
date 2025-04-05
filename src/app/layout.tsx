@@ -20,11 +20,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="en">
+    <html lang="hu">
       <head>
         <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
       </head>

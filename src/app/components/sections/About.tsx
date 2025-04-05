@@ -122,27 +122,6 @@ const About = () => {
               Your browser does not support the video tag.
             </video>
           </motion.div>
-
-          {/* CTA Button */}
-          <motion.div 
-            className="text-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.6 }}
-          >
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-primary-500 to-secondary-500 
-                         text-white font-semibold rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-            >
-              {t('about_section.cta')}
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </motion.button>
-          </motion.div>
         </div>
       </div>
     </section>

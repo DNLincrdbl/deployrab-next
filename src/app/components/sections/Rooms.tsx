@@ -20,8 +20,8 @@ const rooms: Room[] = [
     id: 1,
     type: "room1",
     price: "45000",
-    size: "32",
-    capacity: "2",
+    size: "50",
+    capacity: "4",
     images: [
       '/Room1/Lakatos_Banjol-031.jpg',
       '/terasz1.jpg',
@@ -78,7 +78,7 @@ const rooms: Room[] = [
     id: 3,
     type: "room3",
     price: "42000",
-    size: "28",
+    size: "17",
     capacity: "2",
     images: [
       '/Room3/Lakatos_Banjol-127.jpg',
@@ -100,8 +100,8 @@ const rooms: Room[] = [
     id: 4,
     type: "room4",
     price: "85000",
-    size: "75",
-    capacity: "6",
+    size: "23",
+    capacity: "4",
     images: [
       '/Room4/Lakatos_Banjol-101.jpg',
       '/Room4/Lakatos_Banjol-102.jpg',
@@ -124,7 +124,7 @@ const rooms: Room[] = [
     id: 5,
     type: "room5",
     price: "55000",
-    size: "45",
+    size: "23",
     capacity: "4",
     images: [
       '/Room5/villalaki5.jpg',
@@ -137,8 +137,8 @@ const rooms: Room[] = [
     id: 6,
     type: "room6",
     price: "95000",
-    size: "80",
-    capacity: "4",
+    size: "23",
+    capacity: "3",
     images: [
       '/Room6/Lakatos_Banjol-100.jpg',
       '/Room6/Lakatos_Banjol-088.jpg',
@@ -160,7 +160,7 @@ const rooms: Room[] = [
     id: 7,
     type: "room7",
     price: "35000",
-    size: "22",
+    size: "17",
     capacity: "2",
     images: [
       '/Room7/szoba7.jpg',
@@ -177,8 +177,8 @@ const rooms: Room[] = [
     id: 8,
     type: "room8",
     price: "75000",
-    size: "40",
-    capacity: "2",
+    size: "23",
+    capacity: "3",
     images: [
       '/Room8/Lakatos_Banjol-132.jpg',
       '/Room8/Lakatos_Banjol-133.jpg',
@@ -205,7 +205,7 @@ const rooms: Room[] = [
     id: 9,
     type: "room9",
     price: "48000",
-    size: "35",
+    size: "23",
     capacity: "3",
     images: [
       '/Room9/Lakatos_Banjol-163.jpg',
@@ -229,8 +229,8 @@ const rooms: Room[] = [
     id: 10,
     type: "room10",
     price: "78000",
-    size: "65",
-    capacity: "5",
+    size: "23",
+    capacity: "2",
     images: [
       '/Room10/Lakatos_Banjol-180.jpg',
       '/Room10/Lakatos_Banjol-164.jpg',
