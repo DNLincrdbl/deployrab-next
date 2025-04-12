@@ -122,15 +122,6 @@ const Footer = () => {
                   ),
                   text: t('contact_section.info.email.value'),
                   href: `mailto:${t('contact_section.info.email.value')}`
-                },
-                {
-                  icon: (
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                  ),
-                  text: t('contact_section.info.phone.value'),
-                  href: `tel:${t('contact_section.info.phone.value')}`
                 }
               ].map((item, index) => (
                 <motion.div 
@@ -153,6 +144,34 @@ const Footer = () => {
                   )}
                 </motion.div>
               ))}
+
+              {/* Phone Numbers */}
+              <div className="space-y-2">
+                <motion.div 
+                  whileHover={{ x: 6 }}
+                  className="flex items-center gap-3 text-gray-600 group"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-gray-100 flex items-center justify-center group-hover:bg-primary-50 group-hover:text-primary-500 transition-colors">
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                    </svg>
+                  </div>
+                  <div className="flex flex-col">
+                    <a 
+                      href={`tel:${t('contact_section.info.phone.robert.number')}`}
+                      className="hover:text-primary-500 transition-colors"
+                    >
+                      {t('contact_section.info.phone.robert.name')}: {t('contact_section.info.phone.robert.number')}
+                    </a>
+                    <a 
+                      href={`tel:${t('contact_section.info.phone.anita.number')}`}
+                      className="hover:text-primary-500 transition-colors"
+                    >
+                      {t('contact_section.info.phone.anita.name')}: {t('contact_section.info.phone.anita.number')}
+                    </a>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>

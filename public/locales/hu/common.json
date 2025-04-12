@@ -259,19 +259,28 @@
     "info": {
       "address": {
         "title": "Cím",
-        "value": "Barbat 744, Rab 51280, Horvátország"
+        "value": "Rab, Banjol 617, Horvátország"
       },
       "phone": {
         "title": "Telefon",
-        "value": "+385 99 3333 333"
+        "robert": {
+          "name": "Róbert",
+          "number": "+36704578003",
+          "languages": "Beszél angolul, magyarul, olaszul, németül és horvátul"
+        },
+        "anita": {
+          "name": "Anita",
+          "number": "+36703121556",
+          "languages": "Beszél magyarul"
+        }
       },
       "email": {
         "title": "Email",
-        "value": "info@villalakirab.com"
+        "value": "villalakirab@gmail.com"
       },
       "hours": {
         "title": "Nyitvatartás",
-        "value": "Check-in: 14:00 - 23:00\nCheck-out: 6:00 - 10:00"
+        "value": "Check-in: 14:00 - 23:00\nCheck-out: 6:00 - 9:00"
       }
     }
   },

@@ -125,9 +125,28 @@ const Contact = () => {
                     </svg>
                   ),
                   title: t('contact_section.info.phone.title'),
-                  content: t('contact_section.info.phone.value'),
-                  isLink: true,
-                  href: `tel:${t('contact_section.info.phone.value')}`,
+                  content: (
+                    <div className="space-y-2">
+                      <div>
+                        <a 
+                          href={`tel:${t('contact_section.info.phone.robert.number')}`}
+                          className="text-primary-500 hover:text-primary-600 transition-colors"
+                        >
+                          {t('contact_section.info.phone.robert.name')}: {t('contact_section.info.phone.robert.number')}
+                        </a>
+                        <p className="text-sm text-gray-500 mt-1">{t('contact_section.info.phone.robert.languages')}</p>
+                      </div>
+                      <div>
+                        <a 
+                          href={`tel:${t('contact_section.info.phone.anita.number')}`}
+                          className="text-primary-500 hover:text-primary-600 transition-colors"
+                        >
+                          {t('contact_section.info.phone.anita.name')}: {t('contact_section.info.phone.anita.number')}
+                        </a>
+                        <p className="text-sm text-gray-500 mt-1">{t('contact_section.info.phone.anita.languages')}</p>
+                      </div>
+                    </div>
+                  ),
                   delay: 0.3
                 },
                 {

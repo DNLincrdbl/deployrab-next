@@ -254,19 +254,28 @@
         "info": {
             "address": {
                 "title": "Address",
-                "value": "Barbat 744, Rab 51280, Croatia"
+                "value": "Rab, Banjol 617, Croatia"
             },
             "phone": {
                 "title": "Phone",
-                "value": "+385 99 3333 333"
+                "robert": {
+                    "name": "Robert",
+                    "number": "+36704578003",
+                    "languages": "Speaks English, Hungarian, Italian, German, and Croatian"
+                },
+                "anita": {
+                    "name": "Anita",
+                    "number": "+36703121556",
+                    "languages": "Speaks Hungarian"
+                }
             },
             "email": {
                 "title": "Email",
-                "value": "info@villalakirab.com"
+                "value": "villalakirab@gmail.com"
             },
             "hours": {
                 "title": "Opening Hours",
-                "value": "Check-in: 14:00 - 23:00\nCheck-out: 6:00 - 10:00"
+                "value": "Check-in: 14:00 - 23:00\nCheck-out: 6:00 - 9:00"
             }
         }
     },
