@@ -4,6 +4,8 @@ import About from "@/app/components/sections/About";
 import Contact from "@/app/components/sections/Contact";
 import FAQ from "@/app/components/sections/FAQ";
 import Amenities from "@/app/components/sections/Amenities";
+import Diving from "@/app/components/sections/Diving";
+import ThingsToDo from "@/app/components/sections/ThingsToDo";
 
 export default function Home() {
   return (
@@ -14,6 +16,14 @@ export default function Home() {
       
       <section id="about">
         <About />
+      </section>
+
+      <section id="things-to-do">
+        <ThingsToDo />
+      </section>
+
+      <section id="diving">
+        <Diving />
       </section>
       
       <section id="rooms">

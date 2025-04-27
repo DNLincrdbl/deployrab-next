@@ -15,6 +15,33 @@
         },
         "cta": "Otkrijte naše usluge"
     },
+    "diving_section": {
+        "title": {
+            "first": "Istražite",
+            "second": "podvodni svijet"
+        },
+        "description": "Otkrijte kristalno čiste vode otoka Raba uz Kron Diving, koji se nalazi samo kratku udaljenost od Villa Laki. Bilo da ste početnik ili iskusni ronilac, nudimo različite tečajeve ronjenja i iskustva.",
+        "features": {
+            "courses": {
+                "title": "Tečajevi ronjenja",
+                "items": [
+                    "SSI tečajevi ronjenja",
+                    "Profesionalni tečajevi",
+                    "Slobodno ronjenje",
+                    "Tehničko ronjenje"
+                ]
+            },
+            "locations": {
+                "title": "Ronilačka mjesta",
+                "description": "Istražite prekrasna ronilačka mjesta oko otoka Raba, uključujući olupine i podvodne špilje."
+            },
+            "equipment": {
+                "title": "Oprema",
+                "description": "Modernna ronilačka oprema dostupna za najam, uključujući SCR Mares Horizon sustav."
+            }
+        },
+        "cta": "Rezervirajte ronilačko iskustvo"
+    },
     "rooms": "Sobe",
     "contact": "Kontakt",
     "booking": "Rezerviraj",
@@ -77,7 +104,7 @@
             },
             "room3": {
                 "title": "Soba 3",
-                "description": "Moderni studio apartman s pogledom na dvorište"
+                "description": "Moderni studio apartman s pogledom na more i dvorište"
             },
             "room4": {
                 "title": "Soba 4",
@@ -209,7 +236,7 @@
             "free_wifi": "besplatni WiFi",
             "family_rooms": "obiteljske sobe",
             "non_smoking": "sobe za nepušače",
-            "bar": "bar",
+            "air_conditioning": "klima uređaj",
             "private_beach": "privatna plaža"
         },
         "internet_title": "Internet",
@@ -307,5 +334,63 @@
         "all_rights": "Sva prava pridržana.",
         "privacy": "Privatnost",
         "terms": "Uvjeti korištenja"
+    },
+    "things_to_do_section": {
+      "title": {
+        "first": "Najbolje aktivnosti",
+        "second": "na otoku Rabu"
+      },
+      "description": "Otkrijte raznolike mogućnosti otoka Raba: plaže, kultura, priroda, gastronomija i aktivan odmor za sve uzraste!",
+      "items": [
+        {
+          "icon": "🏖️",
+          "title": "Pješčane plaže",
+          "desc": "Rab je poznat po kristalno čistim, plitkim pješčanim plažama poput Rajske plaže i Livačine.",
+          "link": "https://www.rab-visit.com/what-to-do/beaches/sandy-beaches/566"
+        },
+        {
+          "icon": "🏰",
+          "title": "Stari grad i crkve",
+          "desc": "Prošećite povijesnom jezgrom Raba, otkrijte četiri zvonika i srednjovjekovne crkve.",
+          "link": "https://www.rabholidays.com/rab-town/"
+        },
+        {
+          "icon": "🎉",
+          "title": "Festivali i događanja",
+          "desc": "Sudjelujte na srednjovjekovnom festivalu Rapska Fjera, ribarskim večerima ili viteškim igrama.",
+          "link": "https://www.rab-visit.com/what-to-do/upcoming/rabska-fjera-195/195"
+        },
+        {
+          "icon": "⛵",
+          "title": "Izleti brodom",
+          "desc": "Istražite okolne otoke, uvale i more na organiziranim brodskim ili jedriličarskim turama.",
+          "link": "https://www.valamarcamping.com/rab/excursions"
+        },
+        {
+          "icon": "🚴",
+          "title": "Aktivni odmor",
+          "desc": "Vozite bicikl, planinarite, kajakirajte ili isprobajte vodene sportove na Rabu!",
+          "link": "https://www.perunadventures.com/"
+        },
+        {
+          "icon": "🍽️",
+          "title": "Gastronomija i Rapska torta",
+          "desc": "Kušajte lokalnu kuhinju, poznatu Rapsku tortu, sireve i vina u otočkim restoranima.",
+          "link": "https://rabskatorta.com/"
+        },
+        {
+          "icon": "🌄",
+          "title": "Prirodne ljepote",
+          "desc": "Popnite se do vidikovca Kamenjak ili istražite zelene uvale i šume otoka.",
+          "link": "https://www.cycleblaze.com/journals/zagreb2020/in-rab-the-hike-to-kamenjak/"
+        },
+        {
+          "icon": "🌙",
+          "title": "Noćni život",
+          "desc": "Uživajte u barovima, koncertima na otvorenom i ljetnim događanjima u gradu Rabu.",
+          "link": "https://www.rab-visit.com/en/what-to-do/entertainment/clubbing/190"
+        }
+      ],
+      "more_info": "Više informacija"
     }
 }

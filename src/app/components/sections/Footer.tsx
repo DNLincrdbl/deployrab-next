@@ -188,21 +188,6 @@ const Footer = () => {
             <p className="text-gray-500">
               © {currentYear} Villa Laki. {t('footer.all_rights')}
             </p>
-            <div className="flex gap-8">
-              {[
-                { id: 'about', label: t('footer.privacy') },
-                { id: 'about', label: t('footer.terms') }
-              ].map((link, index) => (
-                <motion.button 
-                  key={index}
-                  whileHover={{ y: -2 }}
-                  onClick={() => scrollToSection(link.id)}
-                  className="text-gray-500 hover:text-primary-500 transition-colors"
-                >
-                  {link.label}
-                </motion.button>
-              ))}
-            </div>
           </div>
         </motion.div>
       </div>

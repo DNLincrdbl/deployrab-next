@@ -15,6 +15,33 @@
         },
         "cta": "Discover our services"
     },
+    "diving_section": {
+        "title": {
+            "first": "Explore",
+            "second": "the underwater world"
+        },
+        "description": "Discover the crystal clear waters of Rab island with Kron Diving, located just a short distance from Villa Laki. Whether you're a beginner or an experienced diver, we offer a variety of diving courses and experiences.",
+        "features": {
+            "courses": {
+                "title": "Diving Courses",
+                "items": [
+                    "SSI Diving Courses",
+                    "Professional Courses",
+                    "Freediving",
+                    "Technical Diving"
+                ]
+            },
+            "locations": {
+                "title": "Diving Spots",
+                "description": "Explore beautiful diving spots around Rab island, including wrecks and underwater caves."
+            },
+            "equipment": {
+                "title": "Equipment",
+                "description": "Modern diving equipment available for rent, including SCR Mares Horizon."
+            }
+        },
+        "cta": "Book a diving experience"
+    },
     "rooms": "Rooms",
     "contact": "Contact",
     "booking": "Booking",
@@ -67,7 +94,7 @@
             },
             "room3": {
                 "title": "Room 3",
-                "description": "Modern studio apartment with garden view"
+                "description": "Modern studio apartment with sea and garden view"
             },
             "room4": {
                 "title": "Room 4",
@@ -199,7 +226,7 @@
             "free_wifi": "free WiFi",
             "family_rooms": "family rooms",
             "non_smoking": "non-smoking rooms",
-            "bar": "bar",
+            "air_conditioning": "air conditioning",
             "private_beach": "private beach"
         },
         "internet_description": "Free WiFi is available throughout the property.",
@@ -296,6 +323,64 @@
         "all_rights": "All rights reserved.",
         "privacy": "Privacy Policy",
         "terms": "Terms of Use"
+    },
+    "things_to_do_section": {
+      "title": {
+        "first": "Top things to do",
+        "second": "on Rab island"
+      },
+      "description": "Discover the best of Rab island: beaches, culture, nature, gastronomy and active adventures for all ages!",
+      "items": [
+        {
+          "icon": "🏖️",
+          "title": "Sandy beaches",
+          "desc": "Rab is famous for its crystal-clear, shallow sandy beaches like Paradise Beach and Livačina.",
+          "link": "https://www.rab-visit.com/what-to-do/beaches/sandy-beaches/566"
+        },
+        {
+          "icon": "🏰",
+          "title": "Old Town & Churches",
+          "desc": "Stroll through Rab's historic old town, discover the four bell towers and medieval churches.",
+          "link": "https://www.rabholidays.com/rab-town/"
+        },
+        {
+          "icon": "🎉",
+          "title": "Festivals & Events",
+          "desc": "Join the Rapska Fjera medieval festival, fishermen's nights or knight tournaments.",
+          "link": "https://www.rab-visit.com/what-to-do/upcoming/rabska-fjera-195/195"
+        },
+        {
+          "icon": "⛵",
+          "title": "Boat trips",
+          "desc": "Explore nearby islands, bays and the sea on organized boat or sailing tours.",
+          "link": "https://www.valamarcamping.com/rab/excursions"
+        },
+        {
+          "icon": "🚴",
+          "title": "Active adventures",
+          "desc": "Go cycling, hiking, kayaking or try water sports all around Rab island!",
+          "link": "https://www.perunadventures.com/"
+        },
+        {
+          "icon": "🍽️",
+          "title": "Gastronomy & Rab cake",
+          "desc": "Taste local cuisine, the famous Rab cake, cheeses and wines in island restaurants.",
+          "link": "https://rabskatorta.com/"
+        },
+        {
+          "icon": "🌄",
+          "title": "Nature & viewpoints",
+          "desc": "Hike to Kamenjak viewpoint or explore the island's green bays and forests.",
+          "link": "https://www.cycleblaze.com/journals/zagreb2020/in-rab-the-hike-to-kamenjak/"
+        },
+        {
+          "icon": "🌙",
+          "title": "Nightlife",
+          "desc": "Enjoy Rab town's bars, open-air concerts and summer events.",
+          "link": "https://www.rab-visit.com/en/what-to-do/entertainment/clubbing/190"
+        }
+      ],
+      "more_info": "More info"
     }
 }
 

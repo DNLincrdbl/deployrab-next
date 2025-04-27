@@ -151,7 +151,7 @@ const AmenitiesSection = () => {
             { icon: "📶", text: t('amenities_section.top_amenities.free_wifi') },
             { icon: "👨‍👩‍👧‍👦", text: t('amenities_section.top_amenities.family_rooms') },
             { icon: "🚭", text: t('amenities_section.top_amenities.non_smoking') },
-            { icon: "🍷", text: t('amenities_section.top_amenities.bar') },
+            { icon: "❄️", text: t('amenities_section.top_amenities.air_conditioning') },
             { icon: "🏖️", text: t('amenities_section.top_amenities.private_beach') },
           ].map((item, index) => (
             <motion.div 

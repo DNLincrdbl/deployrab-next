@@ -15,6 +15,33 @@
         },
         "cta": "Fedezze fel szolgáltatásainkat"
     },
+    "diving_section": {
+        "title": {
+            "first": "Fedezze fel",
+            "second": "a víz alatti világot"
+        },
+        "description": "Ismerje meg Rab sziget kristálytiszta vizeit a Kron Diving segítségével, amely a Villa Lakitől csak rövid távolságra található. Akár kezdő, akár tapasztalt búvár, számos búvárképzési lehetőséget és élményt kínálunk.",
+        "features": {
+            "courses": {
+                "title": "Búvárképzések",
+                "items": [
+                    "SSI Búvárképzések",
+                    "Professzionális képzések",
+                    "Szabadbúvás",
+                    "Technikai búvárás"
+                ]
+            },
+            "locations": {
+                "title": "Búvárhelyek",
+                "description": "Fedezze fel Rab sziget gyönyörű búvárhelyeit, beleértve a hajóroncsokat és víz alatti barlangokat."
+            },
+            "equipment": {
+                "title": "Felszerelés",
+                "description": "Modern búvárfelszerelés bérlésre, beleértve az SCR Mares Horizon rendszert."
+            }
+        },
+        "cta": "Foglaljon búvárélményt"
+    },
     "rooms": "Szobák",
     "contact": "Kapcsolat",
     "booking": "Foglalás",
@@ -68,7 +95,7 @@
       },
       "room3": {
         "title": "Szoba 3",
-        "description": "Modern studio apartman udvarra néző kilátással"
+        "description": "Modern studio apartman tengerre és udvarra néző kilátással"
       },
       "room4": {
         "title": "Szoba 4",
@@ -207,7 +234,7 @@
       "free_wifi": "ingyenes wifi",
       "family_rooms": "családi szobák",
       "non_smoking": "nemdohányzó szobák",
-      "bar": "bár",
+      "air_conditioning": "klíma",
       "private_beach": "saját partszakasz"
     },
     "internet_title": "Internet",
@@ -301,5 +328,63 @@
     "all_rights": "Minden jog fenntartva.",
     "privacy": "Adatvédelem",
     "terms": "Felhasználási feltételek"
+  },
+  "things_to_do_section": {
+    "title": {
+      "first": "Rab sziget",
+      "second": "legjobb programjai"
+    },
+    "description": "Fedezze fel Rab sziget változatos lehetőségeit: strandolás, kultúra, természet, gasztronómia és aktív kikapcsolódás minden korosztálynak!",
+    "items": [
+      {
+        "icon": "🏖️",
+        "title": "Homokos strandok",
+        "desc": "Rab sziget híres kristálytiszta vizű, sekély, homokos strandjairól, mint a Rajska Plaža vagy a Livačina.",
+        "link": "https://www.rab-visit.com/what-to-do/beaches/sandy-beaches/566"
+      },
+      {
+        "icon": "🏰",
+        "title": "Óváros és templomok",
+        "desc": "Sétáljon Rab történelmi óvárosában, fedezze fel a négy harangtornyot és a középkori templomokat.",
+        "link": "https://www.rabholidays.com/rab-town/"
+      },
+      {
+        "icon": "🎉",
+        "title": "Fesztiválok és események",
+        "desc": "Vegyen részt a Rapska Fjera középkori fesztiválon, halászesteken vagy lovagi játékokon.",
+        "link": "https://www.rab-visit.com/what-to-do/upcoming/rabska-fjera-195/195"
+      },
+      {
+        "icon": "⛵",
+        "title": "Hajókirándulások",
+        "desc": "Fedezze fel a környező szigeteket, öblöket és a tengert szervezett hajó- vagy vitorlás túrákon.",
+        "link": "https://www.valamarcamping.com/rab/excursions"
+      },
+      {
+        "icon": "🚴",
+        "title": "Aktív kikapcsolódás",
+        "desc": "Kerékpározzon, túrázzon, kajakozzon vagy próbálja ki a vízi sportokat Rab szigetén!",
+        "link": "https://www.perunadventures.com/"
+      },
+      {
+        "icon": "🍽️",
+        "title": "Gasztronómia és Rapska torta",
+        "desc": "Kóstolja meg a helyi éttermek kínálatát, a híres Rapska tortát, sajtokat és borokat.",
+        "link": "https://rabskatorta.com/"
+      },
+      {
+        "icon": "🌄",
+        "title": "Természeti látnivalók",
+        "desc": "Kiránduljon a Kamenjak kilátóhoz vagy fedezze fel a sziget zöld öbleit, erdeit.",
+        "link": "https://www.cycleblaze.com/journals/zagreb2020/in-rab-the-hike-to-kamenjak/"
+      },
+      {
+        "icon": "🌙",
+        "title": "Éjszakai élet",
+        "desc": "Élvezze Rab város bárait, szabadtéri koncertjeit és nyári programjait.",
+        "link": "https://www.rab-visit.com/en/what-to-do/entertainment/clubbing/190"
+      }
+    ],
+    "more_info": "További információ"
   }
 }
